@@ -1,0 +1,40 @@
+/* General Styling */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+
+/* header and background */
+body{
+background-image: linear-gradient(to right, #7f8c8d,#000000);
+}
+body h1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 55px;
+    text-decoration: none;
+}
+
+/* Buttons */
+.filter{
+   float: right;
+   margin-right: 2%;
+   font-size: 30px;
+}
+button{
+background: none;
+border: none;
+cursor: pointer;
+}
+.mainResultsInfo .fa-heart:active{
+color: rgb(234, 46, 77);
+}    
+.mainResultsInfo .fa-heart:focus{
+color: rgb(234, 46, 77);
+}
