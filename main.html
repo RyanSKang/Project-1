@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>What's In Your Fridge</title>
+  </head>
+  <body>
+   
+
+    <div
+      class="h-80 w-100 bg-cover bg-center bg-no-repeat mt-0 rotate-180"
+      style="background-image: url('./Assets/images/foodherob.jpg')">
+      <p class="rotate-180 h-20 w-100 text-center text-7xl font-san-serif font-bold">
+        Whats In Your Fridge?
+      </p>
+      <button id="categorybtn"
+        type="button"
+        class="rotate-180 bg-black text-white py-3 px-5 rounded-lg m-3 active:bg-yellow-500 active:text-black">
+        CATEGORIES
+      </button>
+
+      <button id="submitbtn"
+        type="button"
+        class="rotate-180 float-right mt-60 bg-black self-end text-white py-3 px-5 rounded-lg m-3 active:bg-yellow-500 active:text-black">
+        Submit
+      </button>
+    </div>
+    <div class="resultcontainer"><p class="text-center font-bold">Results will be displayed in here</p></div>
+    <script src="Assets/Js/main.js"></script>
+  </body>
+</html>
