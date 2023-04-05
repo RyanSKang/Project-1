@@ -75,7 +75,7 @@ module.exports = {
   theme: {
     extend: {
       listStyleImage: {
-        checkmark: 'url("/img/checkmark.png")',
+        checkmark: 'url("../images/delishpancakes.jpg")',
       },
     }
   }
