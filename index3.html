@@ -4,42 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What's in your fridge</title>
+    <title>What's in your fridge?</title>
     <script src = "https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style3.css">
 </head>
 
 <body>
 
-    <header class="m-4 p-4 bg-amber-100">
-        <h1>Title of Selected Recipe</h1>
+    <header 
+    class="m-4 p-4 bg-amber-100">
+    <p id="selectedRecipe"></p>Selected Recipe</p>
     </header>
 
-    <div class="container p-3 mr-[800px] bg-amber-300">
-        <p>Description of Food</p>
+    <div class="md: container md:mx-auto p-3 mr-[800px] bg-amber-300">
+    <p id="foodDescription"></p>Food Description</p>
     </div>
 
-    <div class="flex w-100 amber-400">
+    <div class="flex w-100 space-y-4 amber-400">
 
-    <div class="w-64 flex-none p-10 bg-amber-200">
-        <p>Photo</p>
+    <div class="md: container md:mx-auto w-64 flex-none p-10 bg-amber-200">
+    <p id="recipePhoto"></p>Recipe Photo</p>
     </div>
 
-    <div class="container w-64 flex-none ml-4 p-10 bg-amber-500">
-        <p>Recipe</p>
-        </div>
-
-        <div class="container w-64 flex-none ml-4 p-10 bg-amber-500">
-            <p>Instructions</p>
-            </div>
+    <div class="md: container md:mx-auto w-64 flex-none ml-4 p-10 bg-amber-500">
+    <p id="recipe"></p>Recipe</p>
     </div>
 
-
-    <div class="row">
-        <div class="Selected Recipe Photo"></div>
-        <div class="Ingredients"></div>
-        <div class="Step-by-step instructions"></div>
+    <div class="md: container md:mx-auto w-64 flex-none ml-10 p-4 bg-amber-500">
+    <p id="instructions"></p>Instructions</p>
     </div>
+    </div>
+
 
 <button class="button" id="save-for-later">Save for Later</button>
 
