@@ -17,5 +17,5 @@ function getRecipes() {
 
 saveButton.onclick = function () {
     getRecipes()
-
+console.log(getRecipes)
 }
