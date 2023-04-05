@@ -59,3 +59,25 @@ module.exports = {
   plugins: [require('flowbite/plugin')],
 }
 
+// Refference: Set parameters so that I can purge my files when running: NODE_ENV=production npx tailwindcss -o flowbite.css
+module.exports = {
+  content: [
+    './src/**/*.html',
+    './src/**/*.css',
+    './src/**/*.js',
+  ],
+  theme: {},
+  plugins: [],
+}
+
+//Images
+module.exports = {
+  theme: {
+    extend: {
+      listStyleImage: {
+        checkmark: 'url("/img/checkmark.png")',
+      },
+    }
+  }
+}
+

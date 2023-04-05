@@ -2,7 +2,6 @@ const catBtn = document.querySelector('.categorybtn');
 const submitBtn = document.querySelector('.submitbtn');
 const categoryResults = document.querySelector('.categoryContainer');
 
-
 let categoryItems = [
     {seasoning: [Salt, AllSpice, Garlic],
     protein: [chicken, beef, pork],
