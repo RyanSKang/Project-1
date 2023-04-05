@@ -58,17 +58,27 @@ module.exports = {
   },
   plugins: [require('flowbite/plugin')],
 }
+//This should allow me to pull images from my main path
+module.exports = {
+  content: {
+    relative: true,
+    files: [
+      './pages/**/*.{html,js}',
+      './components/**/*.{html,js}',
+    ],
+  },
+  // ...
+}
 
 // Refference: Set parameters so that I can purge my files when running: NODE_ENV=production npx tailwindcss -o flowbite.css
-module.exports = {
-  content: [
-    './src/**/*.html',
-    './src/**/*.css',
-    './src/**/*.js',
-  ],
-  theme: {},
-  plugins: [],
-}
+// module.exports = {
+//   content: [
+//     './src/**/*.html',
+//     './src/**/*.js',
+//   ],
+//   theme: {},
+//   plugins: [],
+// }
 
 //Images
 module.exports = {
@@ -80,4 +90,6 @@ module.exports = {
     }
   }
 }
+
+
 
