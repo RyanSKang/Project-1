@@ -5,32 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's in your fridge</title>
+    <script src = "https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style3.css">
 </head>
 
 <body>
-    <header class="selected-recipe"
-<header>
-        Title of Food
-</header>
 
-    <main>
-        <section class="description"
-            <!-- Description of selected recipe -->
-        </section>
-    </section>
-        <section class="recipe-photo"
-            <header>Recipe image</header>
-</section>
-        <section class="recipe"
-        <header>Recipe</header>
-</section>
-        <section class="recipe-instructions"
-        <header>Instructions</header>
-</section>
+    <header class="m-4 p-4 bg-amber-100">
+        <h1>Title of Selected Recipe</h1>
+    </header>
+
+    <div class="container p-3 mr-[800px] bg-amber-300">
+        <p>Description of Food</p>
+    </div>
+
+    <div class="flex w-100 amber-400">
+
+    <div class="w-64 flex-none p-10 bg-amber-200">
+        <p>Photo</p>
+    </div>
+
+    <div class="container w-64 flex-none ml-4 p-10 bg-amber-500">
+        <p>Recipe</p>
+        </div>
+
+        <div class="container w-64 flex-none ml-4 p-10 bg-amber-500">
+            <p>Instructions</p>
+            </div>
+    </div>
+
+
+    <div class="row">
+        <div class="Selected Recipe Photo"></div>
+        <div class="Ingredients"></div>
+        <div class="Step-by-step instructions"></div>
+    </div>
+
+<button class="button" id="save-for-later">Save for Later</button>
+
 
 
     </main>
+    <script src="./Assets/Js/script3.js"></script>
 </body>
 
 </html>
