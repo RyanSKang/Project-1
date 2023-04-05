@@ -17,5 +17,12 @@ function getRecipes() {
 
 saveButton.onclick = function () {
     getRecipes()
-console.log(getRecipes)
+
 }
+
+//get title to show in "title os selected recipe"
+//get description of food to display in "description of food box"
+//figure our second API to display photos on my page
+//get recipe to show in recipe box
+//get instructions to post in box 5 (instructions)
+
