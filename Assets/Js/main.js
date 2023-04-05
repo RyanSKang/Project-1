@@ -34,6 +34,4 @@ function displayCategories(categoryItems) {
 //     }
 // getRecipes();
 
-
-
 // catBtn.addEventListener('click', getRecipes);
