@@ -4,16 +4,16 @@ const categoryResults = document.querySelector('.categoryContainer');
 
 
 let categoryItems = [
-    {seasoning: [Thyme, AllSpice, Garlic],
+    {seasoning: [Salt, AllSpice, Garlic],
     protein: [chicken, beef, pork],
     carbs: [bread, rice, beans],
     veggies: [carrots, onion, potato]}
-]
+];
 
 function displayCategories(categoryItems) {
     let itemList = document.getElementById('resultcontainer');
 
-    itemList.textContent = categoryItems.seasoning;
+    itemList.textContent = categoryItems.seasoning[0];
     
 }
 
