@@ -1,3 +1,7 @@
+import { Carousel } from 'flowbite';
+
+const carousel = new Carousel(items, options);
+
 const catBtn = document.querySelector('.categorybtn');
 const submitBtn = document.querySelector('.submitbtn');
 const categoryResults = document.querySelector('.categoryContainer');
