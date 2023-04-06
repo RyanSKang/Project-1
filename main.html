@@ -160,8 +160,7 @@
           <li class="mr-80 py-2 text-xl">
             <div class="text-bold">
               <button
-                class="text-gray-900 hover:text-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-                type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                class="text-gray-900 hover:text-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
                 aria-controls="drawer-navigation">
                 Get Started
               </button>
@@ -186,9 +185,11 @@
               <div class="py-4 overflow-y-auto">
                 <ul class="space-y-2 font-medium">
                   <li>
+
+                    <!--Drop down button for item selection(Protein)-->
                     <button type="button"
                       class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      aria-controls="dropdown-protein" data-collapse-toggle="dropdown-protein">
                       <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +198,7 @@
                           clip-rule="evenodd"></path>
                       </svg>
 
-                      <!--First Option with drop down for better specificity-->
+                      <!--First Option with list for better specificity-->
                       <span class="flex-1 ml-3 text-left whitespace-nowrap">Protein</span>
                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -205,14 +206,14 @@
                           clip-rule="evenodd"></path>
                       </svg>
                     </button>
-                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <ul id="dropdown-protein" class="hidden py-2 space-y-2">
                       <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">100g/Day avg</h3>
                       <ul
                         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="vue-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="vue-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Poultry</label>
                           </div>
@@ -220,7 +221,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="react-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="react-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Beef</label>
                           </div>
@@ -228,7 +229,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="angular-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="angular-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seafood</label>
                           </div>
@@ -236,19 +237,20 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pork</label>
                           </div>
                         </li>
                       </ul>
-
                     </ul>
                   </li>
                   <li>
+
+                    <!--Drop down button for item selection(Dairy))-->
                     <button type="button"
                       class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      aria-controls="dropdown-dairy" data-collapse-toggle="dropdown-dairy">
                       <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -257,8 +259,7 @@
                           clip-rule="evenodd"></path>
                       </svg>
 
-
-                      <!--Second option with drop down for better specificity-->
+                     <!--Second option with list for better specificity-->
                       <span class="flex-1 ml-3 text-left whitespace-nowrap">Dairy</span>
                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -266,14 +267,14 @@
                           clip-rule="evenodd"></path>
                       </svg>
                     </button>
-                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <ul id="dropdown-dairy" class="hidden py-2 space-y-2">
                       <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">3 servings/Day avg</h3>
                       <ul
                         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="vue-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="vue-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Milk</label>
                           </div>
@@ -281,7 +282,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="react-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="react-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Cheese</label>
                           </div>
@@ -289,7 +290,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="angular-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="angular-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yogurt</label>
                           </div>
@@ -297,19 +298,20 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Butter</label>
                           </div>
                         </li>
                       </ul>
-
                     </ul>
                   </li>
+
+                  <!--Drop down button for item selection(Veggies)-->
                   <li>
                     <button type="button"
                       class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      aria-controls="dropdown-veggies" data-collapse-toggle="dropdown-veggies">
                       <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -318,7 +320,7 @@
                           clip-rule="evenodd"></path>
                       </svg>
 
-                      <!--Third Option with drop down for better specificity-->
+                      <!--Third Option with list for better specificity-->
                       <span class="flex-1 ml-3 text-left whitespace-nowrap">Vegetables</span>
                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -326,14 +328,14 @@
                           clip-rule="evenodd"></path>
                       </svg>
                     </button>
-                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <ul id="dropdown-veggies" class="hidden py-2 space-y-2">
                       <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">2-3cups/Day avg</h3>
                       <ul
                         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="vue-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="vue-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Leafy Greens</label>
                           </div>
@@ -341,7 +343,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="react-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="react-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Broccoli</label>
                           </div>
@@ -349,7 +351,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="angular-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="angular-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Potato</label>
                           </div>
@@ -357,7 +359,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Zucchini</label>
                           </div>
@@ -365,7 +367,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Carrots</label>
                           </div>
@@ -373,7 +375,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Onions</label>
                           </div>
@@ -381,7 +383,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Peppers</label>
                           </div>
@@ -389,10 +391,12 @@
                       </ul>
                     </ul>
                   </li>
+
+                  <!--Drop down button for item selection(Fruit)-->
                     <li>
                     <button type="button"
                       class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      aria-controls="dropdown-fruit" data-collapse-toggle="dropdown-fruit">
                       <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -401,8 +405,7 @@
                           clip-rule="evenodd"></path>
                       </svg>
 
-
-                      <!--Fourth option with drop down for better specificity-->
+                   <!--Fourth option with list for better specificity-->
                       <span class="flex-1 ml-3 text-left whitespace-nowrap">Fruit</span>
                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -410,14 +413,14 @@
                           clip-rule="evenodd"></path>
                       </svg>
                     </button>
-                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <ul id="dropdown-fruit" class="hidden py-2 space-y-2">
                       <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">2 cups/Day avg</h3>
                       <ul
                         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="vue-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="vue-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Oranges</label>
                           </div>
@@ -425,7 +428,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="react-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="react-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bananas</label>
                           </div>
@@ -433,7 +436,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="angular-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="angular-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Strawberries</label>
                           </div>
@@ -441,19 +444,20 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
-                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Blueberries</label>
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">yellowberries</label>
                           </div>
                         </li>
                       </ul>
-
                     </ul>
                   </li>
+
+                  <!--Drop down button for item selection(Spices)-->
                    <li>
                     <button type="button"
                       class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      aria-controls="dropdown-spices" data-collapse-toggle="dropdown-spices">
                       <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -462,8 +466,7 @@
                           clip-rule="evenodd"></path>
                       </svg>
 
-
-                      <!--Fifth option with drop down for better specificity-->
+                  <!--Fifth option with list for better specificity-->
                       <span class="flex-1 ml-3 text-left whitespace-nowrap">Spices</span>
                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -471,14 +474,14 @@
                           clip-rule="evenodd"></path>
                       </svg>
                     </button>
-                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <ul id="dropdown-spices" class="hidden py-2 space-y-2">
                       <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">NA/Day avg</h3>
                       <ul
                         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="vue-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="vue-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Salt</label>
                           </div>
@@ -486,7 +489,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="react-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="react-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pepper</label>
                           </div>
@@ -494,7 +497,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="angular-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="angular-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Garlic</label>
                           </div>
@@ -502,7 +505,7 @@
                         <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                           <div class="flex items-center pl-3">
                             <input id="laravel-checkbox" type="checkbox" value=""
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                             <label for="laravel-checkbox"
                               class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Oregano</label>
                           </div>
@@ -511,20 +514,12 @@
 
                     </ul>
                   </li>
-                   <li>
-                    <button type="button"
-                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                      <svg aria-hidden="true"
-                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-                          clip-rule="evenodd"></path>
-                      </svg>
 
                   <!--List to display selected options contained in "Get Started"-->
                   <ul role="list" class="marker:text-yellow-400 list-disc pl-5 space-y-3 text-slate-500">
+                    <li>5 cups chopped Porcini mushrooms</li>
+                    <li>1/2 cup of olive oil</li>
+                    <li>3lb of celery</li>
                     <li>5 cups chopped Porcini mushrooms</li>
                     <li>1/2 cup of olive oil</li>
                     <li>3lb of celery</li>
@@ -735,7 +730,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
               </svg>
-              <!--Drag and drop food items into your bucket-->
+
+              <!--Drag and drop recipe files to your bucket-->
               <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
                   upload</span> or drag and drop</p>
               <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
@@ -847,7 +843,7 @@
                 </footer>
                 <h4 class="text-xl font-bold text-gray-900 dark:text-white">Absolutely loved this recipe!</h4>
               </div>
-              <p class="bg-blue-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">8.7</p>
+              <p class="bg-yellow-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">8.7</p>
             </div>
             <p class="mb-2 text-gray-500 dark:text-gray-400">The bacon was perfect. Crispy, but not too crispy, soft,
               but not too soft. salty, but... well, it was actually a bit too salty so thats why I am giving this recipe
@@ -856,7 +852,7 @@
             </p>
             <aside class="flex items-center mt-3 space-x-5">
               <a href="#"
-                class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                class="inline-flex items-center text-sm font-medium text-yellow-600 hover:underline dark:text-yellow-500">
                 <svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -866,7 +862,7 @@
                 Helpful
               </a>
               <a href="#"
-                class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 group">
+                class="inline-flex items-center text-sm font-medium text-yellow-600 hover:underline dark:text-yellow-500 group">
                 <svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
