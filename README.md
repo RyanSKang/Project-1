@@ -1,13 +1,13 @@
 # Project-1 What's In Your Fridge?
 ## Description
 
-Welcome to "What's "In Your Fridge!" A sim
+Welcome to "What's "In Your Fridge!" A simple application that allows users to search for recipes based on the ingredients that are available to them.
 
 ## Project URL
-<https://kaleikautakaoka.github.io/AB3-CodeWMe/>
+<>
 ## Deployment
 
-- [https://kaleikautakaoka.github.io/AB3-CodeWMe/](https://kaleikautakaoka.github.io/AB3-CodeWMe/)
+- []()
 
 ## Demo/Screenshot
 
