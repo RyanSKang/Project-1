@@ -1,35 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>What's In Your Fridge</title>
-  </head>
-  <body>
-  
 
-    <div
-      class="h-80 w-100 bg-cover bg-center bg-no-repeat mt-0 rotate-180"
-      style="background-image: url('./Assets/images/foodherob.jpg')">
-      <p class="rotate-180 h-20 w-100 text-center text-7xl font-san-serif font-bold">
-        Whats In Your Fridge?
-      </p>
-      <button id="categorybtn"
-        type="button"
-        class="rotate-180 bg-black text-white py-3 px-5 rounded-lg m-3 active:bg-yellow-500 active:text-black">
-        CATEGORIES
-      </button>
-      <div class="categoryContainer"></div>
+<!--Header contains title, cdn links for styling, and a meta description to entice users when performing a search for something similar-->
+<!--This site is styled by tailwind-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+  <title>What's In Your Fridge</title>
+  <meta name="description"
+    content="A recepie generating food application aimed at helping people save money while limiting food waste. Cooking at home is not only healthier but it's cheaper!" />
+</head>
 
-      <button id="submitbtn"
-        type="button"
-        class="rotate-180 float-right mt-60 bg-black self-end text-white py-3 px-5 rounded-lg m-3 active:bg-yellow-500 active:text-black">
-        Submit
-      </button>
+<body>
+  <!--Opening the body with the nav tag. This code below is for the language selection -->
+  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between p-4">
+      <a href="https://flowbite.com/" class="flex items-center"> </a>
+      <div class="flex items-center md:order-2">
+        <button type="button" data-dropdown-toggle="language-dropdown-menu"
+          class="inline-flex font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900">
+            <path fill="#b22234" d="M0 0h7410v3900H0z" />
+            <path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300" />
+            <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+            <g fill="#fff">
+              <g id="d">
+                <g id="c">
+                  <g id="e">
+                    <g id="b">
+                      <path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" />
+                      <use xlink:href="#a" y="420" />
+                      <use xlink:href="#a" y="840" />
+                      <use xlink:href="#a" y="1260" />
+                    </g>
+                    <use xlink:href="#a" y="1680" />
+                  </g>
+                  <use xlink:href="#b" x="247" y="210" />
+                </g>
+                <use xlink:href="#c" x="494" />
+              </g>
+              <use xlink:href="#d" x="988" />
+              <use xlink:href="#c" x="1976" />
+              <use xlink:href="#e" x="2470" />
+            </g>
+          </svg>
+          English (US)
+        </button>
+
+        <!--Language selections with-in the dropdown menu-->
+        <div
+          class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+          id="language-dropdown-menu">
+          <ul class="py-2 font-medium" role="none">
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-us" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd">
+                      <g stroke-width="1pt">
+                        <path fill="#bd3d44"
+                          d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                          transform="scale(3.9385)" />
+                        <path fill="#fff"
+                          d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                          transform="scale(3.9385)" />
+                      </g>
+                      <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
+                      <path fill="#fff"
+                        d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
+                        transform="scale(3.9385)" />
+                    </g>
+                  </svg>
+                  English (US)
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-de" viewBox="0 0 512 512">
+                    <path fill="#ffce00" d="M0 341.3h512V512H0z" />
+                    <path d="M0 0h512v170.7H0z" />
+                    <path fill="#d00" d="M0 170.7h512v170.6H0z" />
+                  </svg>
+                  Deutsch
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-it" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd" stroke-width="1pt">
+                      <path fill="#fff" d="M0 0h512v512H0z" />
+                      <path fill="#009246" d="M0 0h170.7v512H0z" />
+                      <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
+                    </g>
+                  </svg>
+                  Italiano
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512">
+                    <defs>
+                      <path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z" />
+                    </defs>
+                    <path fill="#de2910" d="M0 0h512v512H0z" />
+                    <use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a" />
+                    <use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a" />
+                  </svg>
+                  中文 (繁體)
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button data-collapse-toggle="mobile-menu-language-select" type="button"
+          class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="mobile-menu-language-select" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="currentColor" aria-hidden="true" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+       <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="mobile-menu-language-select">
+
+          <!-- Nav bar link first link "Get started" containing categories to select for items for recipe -->
+          <!-- drawer init and show -->
+          <li class="mr-80 py-2 text-xl">
+            <div class="text-bold">
+              <button
+                class="text-gray-900 hover:text-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                Get Started
+              </button>
+            </div>
+
+            <!-- drawer component -->
+            <div id="drawer-navigation"
+              class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+              tabindex="-1" aria-labelledby="drawer-navigation-label">
+              <h5 id="drawer-navigation-label"
+                class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">CATEGORIES</h5>
+              <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close menu</span>
+              </button>
+              <div class="py-4 overflow-y-auto">
+                <ul class="space-y-2 font-medium">
+                  <li>
+
+                    <!--Drop down button for item selection(Protein)-->
+                    <button type="button"
+                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      aria-controls="dropdown-protein" data-collapse-toggle="dropdown-protein">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+
+                      <!--First Option with list for better specificity-->
+                      <span class="flex-1 ml-3 text-left whitespace-nowrap">Protein</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <ul id="dropdown-protein" class="hidden py-2 space-y-2">
+                      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">100g/Day avg</h3>
+                      <ul
+                        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="vue-checkbox-poultry" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="vue-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Poultry</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="react-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="react-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Beef</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="angular-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="angular-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seafood</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pork</label>
+                          </div>
+                        </li>
+                      </ul>
+                    </ul>
+                  </li>
+
+                  <!--Drop down button for item selection(Dairy)-->
+                  <li>
+                   <button type="button"
+                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      aria-controls="dropdown-dairy" data-collapse-toggle="dropdown-dairy">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+
+                     <!--Second option with list for better specificity-->
+                      <span class="flex-1 ml-3 text-left whitespace-nowrap">Dairy</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <ul id="dropdown-dairy" class="hidden py-2 space-y-2">
+                      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">3 servings/Day avg</h3>
+                      <ul
+                        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="vue-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="vue-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Milk</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="react-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="react-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Cheese</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="angular-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="angular-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yogurt</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Butter</label>
+                          </div>
+                        </li>
+                      </ul>
+                    </ul>
+                  </li>
+
+                  <!--Drop down button for item selection(Veggies)-->
+                  <li>
+                    <button type="button"
+                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      aria-controls="dropdown-veggies" data-collapse-toggle="dropdown-veggies">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+
+                      <!--Third Option with list for better specificity-->
+                      <span class="flex-1 ml-3 text-left whitespace-nowrap">Vegetables</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <ul id="dropdown-veggies" class="hidden py-2 space-y-2">
+                      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">2-3cups/Day avg</h3>
+                      <ul
+                        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="vue-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="vue-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Leafy Greens</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="react-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="react-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Broccoli</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="angular-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="angular-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Potato</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Zucchini</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Carrots</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Onions</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Peppers</label>
+                          </div>
+                        </li>
+                      </ul>
+                    </ul>
+                  </li>
+
+                  <!--Drop down button for item selection(Fruit)-->
+                    <li>
+                    <button type="button"
+                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      aria-controls="dropdown-fruit" data-collapse-toggle="dropdown-fruit">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+
+                   <!--Fourth option with list for better specificity-->
+                      <span class="flex-1 ml-3 text-left whitespace-nowrap">Fruit</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <ul id="dropdown-fruit" class="hidden py-2 space-y-2">
+                      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">2 cups/Day avg</h3>
+                      <ul
+                        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="vue-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="vue-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Oranges</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="react-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="react-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bananas</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="angular-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="angular-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Strawberries</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">yellowberries</label>
+                          </div>
+                        </li>
+                      </ul>
+                    </ul>
+                  </li>
+
+                  <!--Drop down button for item selection(Spices)-->
+                   <li>
+                    <button type="button"
+                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      aria-controls="dropdown-spices" data-collapse-toggle="dropdown-spices">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+
+                  <!--Fifth option with list for better specificity-->
+                      <span class="flex-1 ml-3 text-left whitespace-nowrap">Spices</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <ul id="dropdown-spices" class="hidden py-2 space-y-2">
+                      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">NA/Day avg</h3>
+                      <ul
+                        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="vue-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="vue-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Salt</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="react-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="react-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pepper</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="angular-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="angular-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Garlic</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Oregano</label>
+                          </div>
+                        </li>
+                      </ul>
+
+                    </ul>
+                  </li>
+
+                  <!--List to display selected options contained in "Get Started"-->
+                  <ul role="list" class="marker:text-yellow-400 list-disc pl-5 space-y-3 text-slate-500">
+                    <li class="selected-ingredients1"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                    <li class="selected-ingredients"></li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!--Nav bar continued... Sign in, Contact, About, Help, and Language-->
+          <li>
+            <a href="./signin.html"
+              class="block mr-8 mt-3 py-2 pl-3 pr-4 text-gray-900 rounded  hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:text-yellow-500"
+              aria-current="page">Sign In</a>
+          </li>
+          <li>
+            <a href="./contact.html"
+              class="block mr-8 mt-3 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              class="block mr-8 mt-3 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          </li>
+          <li>
+            <a href="./help.html"
+              class="block py-2 mt-3 ml-3 pl-3 mr-56 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Help</a>
+          </li>
+       </div>
+      </ul>
     </div>
-    <div id="resultcontainer bg-amber-500 h-80 w-60 ml-60"><p class="text-center font-bold">Results will be displayed in here</p></div>
-    <script src="Assets/Js/main.js"></script>
-  </body>
+    </div>
+  </nav>
+
+  <!-- Carousel wrapper -->
+  <div id="gallery" class="mt-1 relative w-full delay-25000" data-carousel="slide">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <!-- Item 1 -->
+      <div class="list-image hidden duration-10000 ease-in-out mt-36"
+        data-carousel-item>
+        <img src="./Assets/images/delishpancakes.jpg"
+          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="delish pancakes pics">
+      </div>
+      <!-- Item 2 -->
+      <div class="list-image hidden duration-10000 ease-in-out"
+        data-carousel-item="active">
+        <img src="./Assets/images/imhungry.jpg"
+          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="image of kabobs">
+      </div>
+      <!-- Item 3 -->
+      <div class="list-image hidden duration-10000 ease-in-out"
+        data-carousel-item>
+        <img src="./Assets/images/leftoverpossibilities.jpg"
+          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="image of left overs">
+      </div>
+      <!-- Item 4 -->
+      <div class="list-image hidden duration-10000 ease-in-out"
+        data-carousel-item>
+        <img src="./Assets/images/putitinasandwhich.jpg"
+          class="absolute block max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="image of sandwich">
+      </div>
+      <!-- Item 5 -->
+      <div class="list-image hidden duration-10000 ease-in-out mb-20 py-10"
+        data-carousel-item>
+        <img src="./Assets/images/simpleyetdelish.jpg"
+          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="image of meal">
+      </div>
+    </div>
+    <!--Buttons for moving the carousel "previous" and "next" respectively-->
+    <button type="button"
+      class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button"
+      class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+
+  <!--Accordian added to keep the page clean. Get inspired will have images of delicious foods-->
+  <!--Accordian flush collaspe the "Get Inspired" drawer-->
+  <!--TODO: make items clickable-->
+  <div id="accordion-flush" data-accordion="collapse"
+    data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+    data-inactive-classes="text-gray-500 dark:text-gray-400">
+    <h2 id="accordion-flush-heading-1">
+      <button type="button"
+        class="ml-5 flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+        data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
+        <span>Get Inspired</span>
+        <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </h2>
+    <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+      <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+        <p class="mb-2 text-gray-500 dark:text-gray-400">
+
+          <!--Button Categories-->
+          <!--TODO add links to buttons(can be simple id tags for images below)-->
+        <div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
+          <button type="button"
+            class="text-yellow-700 hover:text-white border border-yellow-600 bg-white hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-yellow-500 dark:text-yellow-500 dark:hover:text-white dark:hover:bg-yellow-500 dark:bg-gray-900 dark:focus:ring-yellow-800">All
+            categories</button>
+          <button type="button"
+            class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:text-white dark:focus:ring-gray-800">Japaneese</button>
+          <button type="button"
+            class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:text-white dark:focus:ring-gray-800">Italian</button>
+          <button type="button"
+            class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:text-white dark:focus:ring-gray-800">Mexican</button>
+          <button type="button"
+            class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:text-white dark:focus:ring-gray-800">Indian</button>
+        </div>
+
+        <!--Images for inspiration on recipes-->
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 gap-4 duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0">
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/homemadepizza.jpg" alt="image of pizza">
+          </div>
+          <div>
+            <img class="h-auto rounded-lg" src="./Assets/images/allacart.jpg" alt="image of different dishes">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/cajun.jpg" alt="image of cajun food">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/lambchops.jpg" alt="image of lamb dish">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/donuts.jpg" alt="image of donuts">
+          </div>
+          <div>
+            <img class="object-fill rounded-lg" src="./Assets/images/eat together.jpg" alt="image of eating together">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/curry.jpg" alt="image of curry dish">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/ribs.jpg" alt="image of ribs">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg " src="./Assets/images/sushi.jpg" alt="image of sushi">
+          </div>
+          <div>
+            <img class="h-72 w-full rounded-lg" src="./Assets/images/simplesalad.jpg" alt="image of salad">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="./Assets/images/cattoast.jpg" alt="image of cat toast">
+          </div>
+          <div>
+            <img class="h-80 max-w-full rounded-lg" src="./Assets/images/shrimp.jpg" alt="image of shrimp">
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+
+    <!--Share your recipe-dropbox for people to add their recipes-->
+    <h2 id="accordion-flush-heading-2">
+      <button type="button"
+        class="ml-5 flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+        data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+        <span>Share Your Recipe</span>
+        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </h2>
+    <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+      <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+        <p class="mb-2 text-gray-500 dark:text-gray-400"> 
+        <div class="flex items-center justify-center w-full">
+          <label for="dropzone-file"
+            class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+              <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+              </svg>
+
+              <!--Drag and drop recipe files to your bucket-->
+              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
+                  upload</span> or drag and drop</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+            </div>
+            <input id="dropzone-file" type="file" class="hidden" />
+          </label>
+        </div>
+        </p>
+      </div>
+    </div>
+
+    <!--Drawer for spotlighting the dish of the week with reviews preview-->
+    <h2 id="accordion-flush-heading-3">
+      <button type="button"
+        class="ml-5 mb-20 flex items-center justify-between w-full py-5 font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+        data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+        <span>Dish Of The Week</span>
+        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </h2>
+
+   <!--Dish Of The Week-->
+    <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+      <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+        <p class="mb-2 text-gray-500 dark:text-gray-400">
+        <article class="md:gap-8 md:grid md:grid-cols-3">
+          <div>
+            <p class="mb-2 text-gray-500 dark:text-gray-400">Please be respectful when leaving a review</p>
+        <!--Dish of the week info and chef-->
+            <div class="flex items-center mt-4 mb-6 space-x-4">
+              <img class="w-10 h-10 rounded-full" src="./Assets/images/baconator.webp" alt="">
+              <div class="space-y-1 font-medium dark:text-white">
+                <p>Kevin Bacon</p>
+                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                  <svg aria-hidden="true" class="w-5 mr-1.5" viewBox="0 0 18 13" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.0531311" width="17" height="12.1429" rx="2" fill="white" />
+                    <mask id="mask0_3885_33060" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                      width="18" height="13">
+                      <rect x="0.0531311" width="17" height="12.1429" rx="2" fill="white" />
+                    </mask>
+                    <g mask="url(#mask0_3885_33060)">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.0531 0H0.0531311V0.809524H17.0531V0ZM17.0531 1.61905H0.0531311V2.42857H17.0531V1.61905ZM0.0531311 3.2381H17.0531V4.04762H0.0531311V3.2381ZM17.0531 4.85714H0.0531311V5.66667H17.0531V4.85714ZM0.0531311 6.47619H17.0531V7.28572H0.0531311V6.47619ZM17.0531 8.09524H0.0531311V8.90476H17.0531V8.09524ZM0.0531311 9.71429H17.0531V10.5238H0.0531311V9.71429ZM17.0531 11.3333H0.0531311V12.1429H17.0531V11.3333Z"
+                        fill="#D02F44" />
+                      <rect x="0.0531311" width="7.28571" height="5.66667" fill="#46467F" />
+                      <g filter="url(#filter0_d_3885_33060)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M1.67216 1.21427C1.67216 1.43782 1.49095 1.61903 1.2674 1.61903C1.04386 1.61903 0.86264 1.43782 0.86264 1.21427C0.86264 0.990727 1.04386 0.809509 1.2674 0.809509C1.49095 0.809509 1.67216 0.990727 1.67216 1.21427ZM3.29121 1.21427C3.29121 1.43782 3.10999 1.61903 2.88645 1.61903C2.66291 1.61903 2.48169 1.43782 2.48169 1.21427C2.48169 0.990727 2.66291 0.809509 2.88645 0.809509C3.10999 0.809509 3.29121 0.990727 3.29121 1.21427ZM4.5055 1.61903C4.72904 1.61903 4.91026 1.43782 4.91026 1.21427C4.91026 0.990727 4.72904 0.809509 4.5055 0.809509C4.28195 0.809509 4.10074 0.990727 4.10074 1.21427C4.10074 1.43782 4.28195 1.61903 4.5055 1.61903ZM6.52931 1.21427C6.52931 1.43782 6.34809 1.61903 6.12455 1.61903C5.901 1.61903 5.71978 1.43782 5.71978 1.21427C5.71978 0.990727 5.901 0.809509 6.12455 0.809509C6.34809 0.809509 6.52931 0.990727 6.52931 1.21427ZM2.07693 2.42856C2.30047 2.42856 2.48169 2.24734 2.48169 2.0238C2.48169 1.80025 2.30047 1.61903 2.07693 1.61903C1.85338 1.61903 1.67216 1.80025 1.67216 2.0238C1.67216 2.24734 1.85338 2.42856 2.07693 2.42856ZM4.10074 2.0238C4.10074 2.24734 3.91952 2.42856 3.69597 2.42856C3.47243 2.42856 3.29121 2.24734 3.29121 2.0238C3.29121 1.80025 3.47243 1.61903 3.69597 1.61903C3.91952 1.61903 4.10074 1.80025 4.10074 2.0238ZM5.31502 2.42856C5.53856 2.42856 5.71978 2.24734 5.71978 2.0238C5.71978 1.80025 5.53856 1.61903 5.31502 1.61903C5.09148 1.61903 4.91026 1.80025 4.91026 2.0238C4.91026 2.24734 5.09148 2.42856 5.31502 2.42856ZM6.52931 2.83332C6.52931 3.05686 6.34809 3.23808 6.12455 3.23808C5.901 3.23808 5.71978 3.05686 5.71978 2.83332C5.71978 2.60978 5.901 2.42856 6.12455 2.42856C6.34809 2.42856 6.52931 2.60978 6.52931 2.83332ZM4.5055 3.23808C4.72904 3.23808 4.91026 3.05686 4.91026 2.83332C4.91026 2.60978 4.72904 2.42856 4.5055 2.42856C4.28195 2.42856 4.10074 2.60978 4.10074 2.83332C4.10074 3.05686 4.28195 3.23808 4.5055 3.23808ZM3.29121 2.83332C3.29121 3.05686 3.10999 3.23808 2.88645 3.23808C2.66291 3.23808 2.48169 3.05686 2.48169 2.83332C2.48169 2.60978 2.66291 2.42856 2.88645 2.42856C3.10999 2.42856 3.29121 2.60978 3.29121 2.83332ZM1.2674 3.23808C1.49095 3.23808 1.67216 3.05686 1.67216 2.83332C1.67216 2.60978 1.49095 2.42856 1.2674 2.42856C1.04386 2.42856 0.86264 2.60978 0.86264 2.83332C0.86264 3.05686 1.04386 3.23808 1.2674 3.23808ZM2.48169 3.64284C2.48169 3.86639 2.30047 4.04761 2.07693 4.04761C1.85338 4.04761 1.67216 3.86639 1.67216 3.64284C1.67216 3.4193 1.85338 3.23808 2.07693 3.23808C2.30047 3.23808 2.48169 3.4193 2.48169 3.64284ZM3.69597 4.04761C3.91952 4.04761 4.10074 3.86639 4.10074 3.64284C4.10074 3.4193 3.91952 3.23808 3.69597 3.23808C3.47243 3.23808 3.29121 3.4193 3.29121 3.64284C3.29121 3.86639 3.47243 4.04761 3.69597 4.04761ZM5.71978 3.64284C5.71978 3.86639 5.53856 4.04761 5.31502 4.04761C5.09148 4.04761 4.91026 3.86639 4.91026 3.64284C4.91026 3.4193 5.09148 3.23808 5.31502 3.23808C5.53856 3.23808 5.71978 3.4193 5.71978 3.64284ZM6.12455 4.85713C6.34809 4.85713 6.52931 4.67591 6.52931 4.45237C6.52931 4.22882 6.34809 4.04761 6.12455 4.04761C5.901 4.04761 5.71978 4.22882 5.71978 4.45237C5.71978 4.67591 5.901 4.85713 6.12455 4.85713ZM4.91026 4.45237C4.91026 4.67591 4.72904 4.85713 4.5055 4.85713C4.28195 4.85713 4.10074 4.67591 4.10074 4.45237C4.10074 4.22882 4.28195 4.04761 4.5055 4.04761C4.72904 4.04761 4.91026 4.22882 4.91026 4.45237ZM2.88645 4.85713C3.10999 4.85713 3.29121 4.67591 3.29121 4.45237C3.29121 4.22882 3.10999 4.04761 2.88645 4.04761C2.66291 4.04761 2.48169 4.22882 2.48169 4.45237C2.48169 4.67591 2.66291 4.85713 2.88645 4.85713ZM1.67216 4.45237C1.67216 4.67591 1.49095 4.85713 1.2674 4.85713C1.04386 4.85713 0.86264 4.67591 0.86264 4.45237C0.86264 4.22882 1.04386 4.04761 1.2674 4.04761C1.49095 4.04761 1.67216 4.22882 1.67216 4.45237Z"
+                          fill="url(#paint0_linear_3885_33060)" />
+                      </g>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_3885_33060" x="0.86264" y="0.809509" width="5.66666" height="5.04761"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset dy="1" />
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3885_33060" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3885_33060" result="shape" />
+                      </filter>
+                      <linearGradient id="paint0_linear_3885_33060" x1="0.86264" y1="0.809509" x2="0.86264" y2="4.85713"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#F0F0F0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  United States
+                </div>
+              </div>
+            </div>
+
+            <!--Name of dish-->
+            <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
+              <li class="flex items-center"><svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z"
+                    clip-rule="evenodd"></path>
+                </svg>The Baconator</li>
+              <li class="flex items-center"><svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                    clip-rule="evenodd"></path>
+                </svg>20min</li>
+              <li class="flex items-center"><svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                  </path>
+                </svg>Ingrediant List: Bacon, bacon, bacon, bacon, and a side of bacon.</li>
+            </ul>
+          </div>
+          <div class="col-span-2 mt-6 md:mt-0">
+            <div class="flex items-start mb-5">
+              <div class="pr-4">
+                <footer>
+                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">Reviewed: <time
+                      datetime="2022-01-20 19:00">January 20, 2022</time></p>
+                </footer>
+                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Absolutely loved this recipe!</h4>
+              </div>
+              <p class="bg-yellow-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">8.7</p>
+            </div>
+            <p class="mb-2 text-gray-500 dark:text-gray-400">The bacon was perfect. Crispy, but not too crispy, soft,
+              but not too soft. salty, but... well, it was actually a bit too salty so thats why I am giving this recipe
+              8 out of 10. </p>
+            <p class="mb-5 text-gray-500 dark:text-gray-400">I deviated from the recipe a little and I added extra salt.
+            </p>
+            <aside class="flex items-center mt-3 space-x-5">
+              <a href="#"
+                class="inline-flex items-center text-sm font-medium text-yellow-600 hover:underline dark:text-yellow-500">
+                <svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z">
+                  </path>
+                </svg>
+                Helpful
+              </a>
+              <a href="#"
+                class="inline-flex items-center text-sm font-medium text-yellow-600 hover:underline dark:text-yellow-500 group">
+                <svg aria-hidden="true" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z">
+                  </path>
+                </svg>
+                Not helpful
+              </a>
+            </aside>
+          </div>
+        </article>
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!--links for flowbite and cloud flare-->
+  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.js"></script>
+  <script src="Assets/Js/main.js"></script>
+</body>
 </html>

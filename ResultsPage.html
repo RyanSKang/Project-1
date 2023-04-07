@@ -9,26 +9,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oleo+Script&family=Poppins:wght@900&family=Work+Sans&display=swap" 
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/7afcb2e192.js" crossorigin="anonymous"></script>
+    <!-- Link tailwind CSS to HTML -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <!-- Link local CSS "resultspage.js" -->
     <link rel="stylesheet" href="/Assets/CSS/ResultsPage.css">
     <title>What's in Your Fridge!</title>
 </head>
 <body>
-    <h1>Results</h1>
-    <div class="filterBtn">
-        <button class="filter" type="button"><i class="fa-solid fa-bars"></i></button>
-        <div class="filterOptions">
-            
-        </div>
-    </div>
-    <div class="row">
+    <header>
+        <nav class="flex items-center justify-between p-6 container mx-auto">
+            <button class="bg-sky-500 hover:bg-sky-700 homePageBtn"><i class="fa-solid fa-house"></i></button>
+            <h1 class="Uppercase">Results</h1>
+            <div class="filterBtn">
+                <button class="filter" type="button"><i class="fa-solid fa-bars"></i></button>
+            <div class="filterOptions"></div>
+            </div>
+        </nav>    
+    </header>
+
+    <div class="mt-3 flex -space-x-2 overflow-hidden row">
         <div class="card">
             <main class="mainResultsInfo">
-                <img class="resultsImg">
-                <p class="description">DESCRIPTION</p>
-                <a class="seeMore">SEE MORE</a>
-                <div class="saveBtn">
-                <h4 class="Saved">SAVE FOR LATER <button class="saveLater"><i class="fa-regular fa-heart"></i></button></h4>
+                <div class="hero">
+                    <div class="resultsImg"></div>
+                    <div class="layer">
+                        <div class="resultsTitle"></div>
+                        <div class="foodDescription"></div>
+                        <button class="hover:font-weight: 600 seeMoreBtn">See More</button>
+                        <button class="saveLater"><i class="fa-regular fa-heart"></i></button>
+                    </div>
                 </div>
             </main>
         </div>
