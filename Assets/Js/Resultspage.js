@@ -80,16 +80,10 @@ function displayImg(foodImg){
     var img=$("<img>");
     img.attr('src',foodImg)
     resultsImg.append(img);
-
 }
 
-
-// var imgDisplay=$('<div>');
-// imgDisplay.attr('class', 'resultsImg');
-// imgDisplay.append(main);
-// // console.log(imgDisplay);
-
-
-// var moreInfoPage=$('<div>');
-// moreInfoPage.append(main)
-// // console.log(moreInfoPage);
+// Creating a see more Btn that assigns to index3.html
+seeMoreBtn.on('click',function(){
+    // console.log('seemorebtn');
+    location.assign("./index3.html");
+})
