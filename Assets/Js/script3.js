@@ -1,3 +1,5 @@
+// defined variables
+
 var saveButton = document.querySelector(".button")
 var resultsContainer = document.querySelector("#selectedRecipe")
 var descriptionResults = document.querySelector("#foodDescription")
@@ -5,7 +7,9 @@ var recipeResults = document.querySelector("#instructions")
 var instructionList = document.querySelector("#instructions-list")
 var listedSteps = document.querySelector("#recipe")
 var mealPlan = document.querySelector("#recipe-steps")
+var foodPic = document.querySelector("#recipePhoto")
 
+// function to display Title of selected recipe (save for later button to generate data from API- just to see if it is correctly showing data)
 
 function getRecipes() {
     const options = {
@@ -37,6 +41,8 @@ function showRecipe(data) {
     resultsContainer.textContent = data.results[0].display
 }
 
+// function to display decription of selected recipe on page
+
 function getDescription() {
     const options = {
         method: 'GET',
@@ -61,6 +67,8 @@ function showDescription(data) {
     descriptionResults.textContent = data.results[0].description
 }
 
+// function to display Instructions on page
+
 
 function getResults() {
     const options = {
@@ -80,13 +88,16 @@ function getResults() {
 }
 
 function showResults(data) {
-    console.log(data)
-    for (let index = 0; index < data.results[0].instructions.length; index++) {
+    var ingredientStuff = data.results[0].sections[0].components
+    console.log(ingredientStuff)
+    for (let index = 0; index < ingredientStuff.length; index++) {
         var p = document.createElement("p")
-        p.textContent = "- " + data.results[0].instructions[index].display_text
+        p.textContent = "- " + ingredientStuff[index].raw_text
         instructionList.append(p)
     }
 }
+
+// function to display Recipe in card on page
 
 function getSteps(data) {
     const options = {
@@ -115,3 +126,39 @@ function showSteps(data) {
         mealPlan.append(p)
     }
 }
+
+//Created goBackBtn so user can return to previous page
+
+const goBackBtn = document.getElementById("go-back-btn")
+goBackBtn.addEventListener("click", function () {
+    location.assign("./ResultsPage.html")
+})
+
+//function getPic() {
+//    const options = {
+//        method: 'GET',
+//        headers: {
+//            'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
+//            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+//        }
+//    };
+
+//  fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
+//      .then(response => response.json())
+//      .then(response => {
+//          showResults(response)
+//      })
+//      .catch(err => console.error(err));
+//}
+
+//function showPic(data) {
+//    console.log(data)
+//    foodPic.textContent = data.results[0].thumbnail_url
+//}
+
+//NEED TO FINISH
+
+// Need to make page look better
+// need photo to appear in box
+// need to link results from previous page
+//remove save for later button
