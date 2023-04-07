@@ -1,6 +1,24 @@
 /*@type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
 
+module.exports = {
+
+  plugins: [
+      require('flowbite/plugin')
+  ]
+
+}
+
+module.exports = {
+
+  content: [
+      "./node_modules/flowbite/**/*.js"
+  ]
+
+}
+
+
+
 (module.exports = {
   content: ["./node_modules/flowbite/**/*.js"],
   theme: {
@@ -153,4 +171,8 @@ module.exports = {
   },
 };
 
+import { Tooltip } from 'flowbite';
+import type { TooltipOptions, TooltipInterface } from "flowbite";
+
+import { Carousel } from 'flowbite';
 
