@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What's in your fridge</title>
-    <script src = "https://cdn.tailwindcss.com"></script>
+    <title>What's in your fridge?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style3.css">
 </head>
 
 <body>
 
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Back
+    </button>
+
     <header class="m-4 p-4 bg-amber-100">
-        <h1>Title of Selected Recipe</h1>
+        <div id="selectedRecipe">
+            </p>Selected Recipe</div>
     </header>
 
-    <div class="container p-3 mr-[800px] bg-amber-300">
-        <p>Description of Food</p>
+    <div class="md: container md:mx-auto p-3 mr-[800px] bg-amber-300">
+        <div id="foodDescription"></div>
+    </div>
     </div>
 
-    <div class="flex w-100 amber-400">
+    <div class="flex w-100 space-y-4 amber-400">
 
-    <div class="w-64 flex-none p-10 bg-amber-200">
-        <p>Photo</p>
-    </div>
-
-    <div class="container w-64 flex-none ml-4 p-10 bg-amber-500">
-        <p>Recipe</p>
+        <div class="md: container md:mx-auto w-64 flex-none p-10 bg-amber-200">
+            <div id="recipePhoto"></div>Recipe Photo</p>
         </div>
 
-        <div class="container w-64 flex-none ml-4 p-10 bg-amber-500">
-            <p>Instructions</p>
-            </div>
+        <div class="md: container md:mx-auto w-64 flex-none ml-4 p-10 bg-amber-500">
+            <ul id="recipe"></ul>Recipe
+        </div>
+    </div>
+
+    <div class="md: container md:mx-auto w-64 flex-none ml-10 p-4 bg-amber-500">
+        <p id="instructions"></p>
+    </div>
     </div>
 
 
-    <div class="row">
-        <div class="Selected Recipe Photo"></div>
-        <div class="Ingredients"></div>
-        <div class="Step-by-step instructions"></div>
-    </div>
-
-<button class="button" id="save-for-later">Save for Later</button>
+    <button class="button md: container md:mx-auto bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded id=
+        save-for-later">Save for Later</button>
 
 
 

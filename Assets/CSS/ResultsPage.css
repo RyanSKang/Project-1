@@ -38,3 +38,51 @@ color: rgb(234, 46, 77);
 .mainResultsInfo .fa-heart:focus{
 color: rgb(234, 46, 77);
 }
+
+/* mainCard design for individual results */
+.hero{
+    border-radius: 15px;
+    border:solid white;
+    padding: 20px;
+    max-width: 250px;
+    height: 250px;
+    display: grid;
+
+}
+.card .mainResultsInfo .resultsImg{
+    z-index:0;
+    width: 250px;
+    height: 250px;
+}
+.card .mainResultsInfo .layer .resultsTitle{
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 1%;
+    text-decoration: underline;
+}
+.layer{
+    width: 250px;
+    height: 0;
+    background: linear-gradient(rgba(66, 62, 62, 0.6),#01b4b4);
+    border-radius: 10px;
+    position:absolute;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    z-index: 1;
+    text-align: center;
+    transition: height 0.5s;
+}
+.card:hover .mainResultsInfo .hero .layer{
+    height: 250px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+}
