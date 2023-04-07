@@ -1,6 +1,5 @@
 # Project-1 What's In Your Fridge?
 ## Description
-
 Welcome to "What's "In Your Fridge!" A simple application that allows users to search for recipes based on the ingredients that are available to them.
 
 ## Project URL
