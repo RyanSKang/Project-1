@@ -84,7 +84,7 @@ function showResults(data) {
     for (let index = 0; index < data.results[0].instructions.length; index++) {
         var p = document.createElement("p")
         p.textContent = "- " + data.results[0].instructions[index].display_text
-        instructionList.appendChild(ul)
+        instructionList.append(p)
     }
 }
 
@@ -97,7 +97,7 @@ function getSteps(data) {
         }
     };
 
-    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
+    fetch('https://tasty.p.rapidapi.com/feeds/list?size=5&timezone=%2B0700&vegetarian=false&from=0', options)
         .then(response => response.json())
         .then(response => {
             showSteps(response)
@@ -106,18 +106,12 @@ function getSteps(data) {
 }
 
 function showSteps(data) {
-    console.log(data)
-    for (let index = 0; index < data.results[0].instructions.length; index++) {
+    var differentSteps = data.results[0].item.recipes[0].instructions
+    console.log(differentSteps)
+    for (let index = 0; index < differentSteps.length; index++) {
         var p = document.createElement("p")
-        p.textContent = "- " + data.results[0].instructions[index].display_text
-        listedSteps.appendChild(p)
+        p.textContent = (index + 1) + ". " + differentSteps[index].display_text
+        console.log(p)
+        mealPlan.append(p)
     }
 }
-
-
-//get title to show in "title os selected recipe"
-//get description of food to display in "description of food box"
-//figure our second API to display photos on my page
-//get recipe to show in recipe box
-//get instructions to post in box 5 (instructions)
-
