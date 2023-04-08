@@ -27,7 +27,10 @@ var getRecipeListURL='https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&t
     var seeMoreBtn=$('.seeMoreBtn');
 // Save For Later Button
     var saveLaterBtn=$('.saveLater');
-
+// Save for later Results
+    var saveLaterResultsBtn=$('.saveLaterResults');
+// Empty Local Storage Array of SavedResults
+    var savedResultsArr=[]
 
 // A function that retrieves data from API
 function getName(){
@@ -86,4 +89,31 @@ function displayImg(foodImg){
 seeMoreBtn.on('click',function(){
     // console.log('seemorebtn');
     location.assign("./index3.html");
+})
+
+// Save for later button should save data into local storage
+saveLaterBtn.on('click',function(){
+    // console.log('save later button');
+    var savedArr=[];
+    console.log(titleOfFood[0].innerHTML);
+    var foodInfo={
+        "name":titleOfFood[0].innerHTML,
+        "description": foodDescription[0].innerHTML,
+        "img": resultsImg[0].innerHTML,
+    };
+    console.log(foodInfo);
+    savedResultsArr.push(foodInfo);
+    savedArr=localStorage.setItem("SavedFood",JSON.stringify(foodInfo));
+})
+
+saveLaterResultsBtn.on('click', function(){
+    // console.log('results');
+    location.assign("../Additional HTML/help.html");
+    savedResultsArr=localStorage.getItem("SavedFood");
+    // Execute a function that displays saved results onto page
+    function displaySavedResults(savedResultsArr);
+})
+
+function displaySavedResults({
+    
 })
