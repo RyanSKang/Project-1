@@ -74,19 +74,18 @@ function showDescription(data) {
     descriptionResults.textContent = data.results[0].description
 }
 
-// function to display Instructions on page
+// // function to display Instructions on page
 
-
+getResults()
 function getResults() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
+            'X-RapidAPI-Key': 'ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9',
             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
-
-    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + foodName, options)
+    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
         .then(response => response.json())
         .then(response => {
             showRecipe(response)
@@ -97,7 +96,6 @@ function getResults() {
         })
         .catch(err => console.error(err));
 }
-
 function showResults(data) {
     var ingredientStuff = data.results[0].sections[0].components
     console.log(ingredientStuff)
@@ -107,6 +105,7 @@ function showResults(data) {
         instructionList.append(p)
     }
 }
+
 
 // function to display Recipe in card on page
 
