@@ -4,7 +4,6 @@
     margin: 0;
     padding:0;
     font-family: 'Nunito', sans-serif;
-    color: white;
 }
 
 /* header and background */
@@ -32,42 +31,50 @@ background: none;
 border: none;
 cursor: pointer;
 }
-.mainResultsInfo .fa-heart:active{
-color: rgb(234, 46, 77);
-}    
-.mainResultsInfo .fa-heart:focus{
-color: rgb(234, 46, 77);
+.mainResultsInfo .hero .layer .resultsBtn{
+    display: flex;
 }
+.mainResultsInfo .hero .layer button{
+    display: inline-block;
+    justify-content: space-evenly;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #fff;
+    color: #01b4b4;
+    text-align: center;
+}
+
 
 /* mainCard design for individual results */
 .hero{
     border-radius: 15px;
     border:solid white;
     position:relative;
+    left: 15px;
     padding: 20px;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 275px;
     display: grid;
 
 }
 .card .mainResultsInfo .resultsImg{
-    z-index:0;
-    width: 250px;
-    height: 250px;
-    display: none;
+    position: absolute;
+    object-fit: cover;
+    
+    /* display: none; */
 }
 .card .mainResultsInfo .layer .resultsTitle{
     align-items: center;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 1%;
+    margin-bottom: 20px;
     text-decoration: underline;
 }
 .layer{
-    width: 250px;
+    width: 300px;
     height: 0;
     background: linear-gradient(rgba(66, 62, 62, 0.6),#01b4b4);
-    border-radius: 10px;
+    border-radius: 15px;
     position:absolute;
     left:0;
     bottom: 0;
@@ -78,10 +85,9 @@ color: rgb(234, 46, 77);
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;
-    z-index: 1;
     text-align: center;
-    transition: height 0.5s;
+    transition: height 0.3s;
 }
 .card:hover .mainResultsInfo .hero .layer{
-    height: 250px;
+    height: 275px;
 }
