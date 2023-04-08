@@ -37,7 +37,9 @@ NA
 -[pixabay](https://pixabay.com/illustrations
  cloud-computer-circuit-board-cpu-6532831/)
 -[Devon Abbott](http://dabbott.github.io/javascript-playgrounds/)
-- [Node.js](https://nodejs.org/)
+- [pexels](https://www.pexels.com/)
+- [tailwind](https://tailwindcss.com/docs/installation)
+- [flowbite](https://flowbite.com/docs/getting-started/introduction/)
 
 ## Contact
 
@@ -45,10 +47,10 @@ Email: sasasa@gmail.com
 
 ## Author
 Author: Taylor Knox
-GitHub: <https://github.com/>
+GitHub: <https://github.com/knaxilla>
 
 Author: Ryan Kang
-GitHub: <https://github.com/>
+GitHub: <https://github.com/RyanSKang>
 
 Author: Sachi Takaoka
 GitHub: <https://github.com/kaleikautakaoka>

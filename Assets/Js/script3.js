@@ -1,5 +1,4 @@
 // defined variables
-
 var saveButton = document.querySelector(".button")
 var resultsContainer = document.querySelector("#selectedRecipe")
 var descriptionResults = document.querySelector("#foodDescription")
