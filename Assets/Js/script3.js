@@ -13,6 +13,8 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 
 var foodName = params.food;
+let item = localStorage.getItem("item")
+//console.log("item", item)
 
 // function to display Title of selected recipe (save for later button to generate data from API- just to see if it is correctly showing data)
 
@@ -43,9 +45,11 @@ var foodName = params.food;
 // }
 
 function showRecipe(data) {
-    console.log(data)
+    //console.log(data)
     resultsContainer.textContent = data.results[0].name
+    localStorage.setItem("item", data.results[0].name)
 }
+
 
 // function to display decription of selected recipe on page
 
@@ -70,24 +74,23 @@ function showRecipe(data) {
 // }
 
 function showDescription(data) {
-    console.log(data)
+    //console.log(data)
     descriptionResults.textContent = data.results[0].description
 }
 
-// // function to display Instructions on page
 
-getResults()
 function getResults() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9',
+            'X-RapidAPI-Key': '3602e7d2c0msh7b77c709e71ee6fp121298jsnc07eb1430570',
             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
     fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
         .then(response => response.json())
         .then(response => {
+            //console.log("response", response)
             showRecipe(response)
             showResults(response)
             showDescription(response)
@@ -98,7 +101,6 @@ function getResults() {
 }
 function showResults(data) {
     var ingredientStuff = data.results[0].sections[0].components
-    console.log(ingredientStuff)
     for (let index = 0; index < ingredientStuff.length; index++) {
         var p = document.createElement("p")
         p.textContent = "- " + ingredientStuff[index].raw_text
@@ -127,13 +129,13 @@ function showResults(data) {
 // }
 
 function showSteps(data) {
-    console.log(data)
+    //console.log(data)
     var differentSteps = data.results[0].instructions
-    console.log(differentSteps)
+    //console.log(differentSteps)
     for (let index = 0; index < differentSteps.length; index++) {
         var p = document.createElement("p")
         p.textContent = (index + 1) + ". " + differentSteps[index].display_text
-        console.log(p)
+        //console.log(p)
         mealPlan.append(p)
     }
 }
@@ -143,6 +145,11 @@ function showSteps(data) {
 const goBackBtn = document.getElementById("go-back-btn")
 goBackBtn.addEventListener("click", function () {
     location.assign("./ResultsPage.html")
+})
+
+const homeBtn = document.getElementById("home-btn")
+homeBtn.addEventListener("click", function () {
+    window.location.assign("../index.html")
 })
 
 // function getPic() {
@@ -163,7 +170,7 @@ goBackBtn.addEventListener("click", function () {
 // }
 
 function showPic(data) {
-    console.log(data)
+    //console.log(data)
     foodPic.src = data.results[0].thumbnail_url
 }
 
