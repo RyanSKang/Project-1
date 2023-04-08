@@ -9,58 +9,65 @@ var listedSteps = document.querySelector("#recipe")
 var mealPlan = document.querySelector("#recipe-steps")
 var foodPic = document.querySelector("#recipePhoto")
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
+var foodName = params.food;
+
 // function to display Title of selected recipe (save for later button to generate data from API- just to see if it is correctly showing data)
 
-function getRecipes() {
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '2cbea6cb03mshf171fe520b8f6d2p1beedfjsn067d28eee338',
-            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-        }
-    };
+// function getRecipes() {
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
+//             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+//         }
+//     };
 
-    fetch('https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup', options)
-        .then(response => response.json())
-        .then(response => {
-            showRecipe(response)
-        })
-        .catch(err => console.error(err));
-}
+//     fetch('https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=' + foodName, options)
+//         .then(response => response.json())
+//         .then(response => {
+//             showRecipe(response)
+//         })
+//         .catch(err => console.error(err));
+// }
 
-saveButton.onclick = function () {
-    getRecipes()
-    getDescription()
-    getResults()
-    getSteps()
+// button to display data from API
 
-}
+// saveButton.onclick = function () {
+//     getRecipes()
+//     getResults()
+//     getSteps()
+
+// }
 
 function showRecipe(data) {
     console.log(data)
-    resultsContainer.textContent = data.results[0].display
+    resultsContainer.textContent = data.results[0].name
 }
 
 // function to display decription of selected recipe on page
 
-function getDescription() {
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
-            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-        }
-    };
+// function getDescription() {
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
+//             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+//         }
+//     };
 
-    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
-        .then(response => response.json())
-        .then(response => {
-            showDescription(response)
-        })
-        .catch(err => console.error(err));
+//     fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
+//         .then(response => response.json())
+//         .then(response => {
+//             showDescription(response)
+//             showPic(response)
+//         })
+//         .catch(err => console.error(err));
 
 
-}
+// }
 
 function showDescription(data) {
     console.log(data)
@@ -79,10 +86,14 @@ function getResults() {
         }
     };
 
-    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
+    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + foodName, options)
         .then(response => response.json())
         .then(response => {
+            showRecipe(response)
             showResults(response)
+            showDescription(response)
+            showSteps(response)
+            showPic(response)
         })
         .catch(err => console.error(err));
 }
@@ -99,25 +110,26 @@ function showResults(data) {
 
 // function to display Recipe in card on page
 
-function getSteps(data) {
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '2cbea6cb03mshf171fe520b8f6d2p1beedfjsn067d28eee338',
-            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-        }
-    };
+// function getSteps(data) {
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
+//             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+//         }
+//     };
 
-    fetch('https://tasty.p.rapidapi.com/feeds/list?size=5&timezone=%2B0700&vegetarian=false&from=0', options)
-        .then(response => response.json())
-        .then(response => {
-            showSteps(response)
-        })
-        .catch(err => console.error(err));
-}
+//     fetch('https://tasty.p.rapidapi.com/feeds/list?size=5&timezone=%2B0700&vegetarian=false&from=0', options)
+//         .then(response => response.json())
+//         .then(response => {
+//             showSteps(response)
+//         })
+//         .catch(err => console.error(err));
+// }
 
 function showSteps(data) {
-    var differentSteps = data.results[0].item.recipes[0].instructions
+    console.log(data)
+    var differentSteps = data.results[0].instructions
     console.log(differentSteps)
     for (let index = 0; index < differentSteps.length; index++) {
         var p = document.createElement("p")
@@ -134,27 +146,30 @@ goBackBtn.addEventListener("click", function () {
     location.assign("./ResultsPage.html")
 })
 
-//function getPic() {
-//    const options = {
-//        method: 'GET',
-//        headers: {
-//            'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
-//            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-//        }
-//    };
+// function getPic() {
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Key': '0e963f4346mshe75e58bd44d5740p145596jsnca9c024f5cd7',
+//             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+//         }
+//     };
 
-//  fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
-//      .then(response => response.json())
-//      .then(response => {
-//          showResults(response)
-//      })
-//      .catch(err => console.error(err));
-//}
+//     fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
+//         .then(response => response.json())
+//         .then(response => {
+//             showPic(response)
+//         })
+//         .catch(err => console.error(err));
+// }
 
-//function showPic(data) {
-//    console.log(data)
-//    foodPic.textContent = data.results[0].thumbnail_url
-//}
+function showPic(data) {
+    console.log(data)
+    foodPic.src = data.results[0].thumbnail_url
+}
+
+
+getResults()
 
 //NEED TO FINISH
 
