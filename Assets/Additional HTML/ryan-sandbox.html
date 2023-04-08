@@ -12,7 +12,7 @@
     <!-- Link tailwind CSS to HTML -->
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <!-- Link local CSS "resultspage.js" -->
-    <link rel="stylesheet" href="/Assets/CSS/ResultsPage.css">
+    <link rel="stylesheet" href="../CSS/ResultsPage.css">
     <title>What's in Your Fridge!</title>
 </head>
 <body>
@@ -23,6 +23,7 @@
             <div class="filterBtn">
                 <button class="filter" type="button"><i class="fa-solid fa-bars"></i></button>
             <div class="filterOptions"></div>
+            <button class="saveLaterResults">Save for later</button>
             </div>
         </nav>    
     </header>
@@ -31,12 +32,14 @@
         <div class="card">
             <main class="mainResultsInfo">
                 <div class="hero">
-                    <div class="resultsImg"></div>
+                    <div class="resultsImg">hello</div>
                     <div class="layer">
-                        <div class="resultsTitle"></div>
-                        <div class="foodDescription"></div>
-                        <button class="hover:font-weight: 600 seeMoreBtn">See More</button>
-                        <button class="saveLater"><i class="fa-regular fa-heart"></i></button>
+                        <div class="resultsTitle">food</div>
+                        <div class="foodDescription">food D</div>
+                        <div class="resultsBtn">
+                            <button class="hover:font-weight: 600 seeMoreBtn"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="saveLater"><i class="fa-solid fa-heart"></i></button>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -45,6 +48,6 @@
 <!-- Adding Jquery -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 <!-- Link local javascript: resultspage.js -->
-<script src="./Assets/Js/Resultspage.js"></script>
+<script src="../Js/Resultspage.js"></script>
 </body>
 </html>
