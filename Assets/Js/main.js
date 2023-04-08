@@ -1,4 +1,6 @@
-let ingredients = document.getElementById("");
+let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
+let displayIngredientsLi = document.querySelectorAll("selected-ingredients");
+let generateListBtn = document.getElementById("generateBtn")
 
 if (
   localStorage.getItem("color-theme") === "dark" ||
