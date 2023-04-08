@@ -1,5 +1,5 @@
 // Link tastyAPI to javascript
-var Key='2cbea6cb03mshf171fe520b8f6d2p1beedfjsn067d28eee338'
+var Key='ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9'
 const options = {
 	method: 'GET',
 	headers: {'X-RapidAPI-Key':Key, 
@@ -11,24 +11,28 @@ var getRecipeListURL='https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&t
 
 // Main div holding all divs
     var mainCard=$('.card');
-// Main results info Card residing in Main Div
-    var main=$('.mainResultsInfo');
 // Title of result (food) on Div
     var titleOfFood=$('.resultsTitle');
 // Div holding image/description/buttons
     var hero=$('.hero');
-// div holdimg image but outside of layer div
-    var resultsImg=$('.resultsImg');
-// Div holding description and buttons on a hover affect
-    var layer=$('.layer');
+// <a> tag holdimg image but outside of hero div
+    var displayPic=$('.resultsImg');
+//  <img> tag within resultsImg a tag
+    var resultsImg=$('imgResult');
 // Div within layer holding food description
     var foodDescription=$('.foodDescription');
 // See More Button
     var seeMoreBtn=$('.seeMoreBtn');
 // Save For Later Button
     var saveLaterBtn=$('.saveLater');
-// Save for later Results
-    var saveLaterResultsBtn=$('.saveLaterResults');
+// Home Button
+    var homeBtn=$('.homeBtn');
+// About Button
+    var aboutBtn=$('.aboutBtn');
+// Contact Button
+    var contactBtn=$('.contactBtn');
+// Save for later Results Button
+        var saveLaterResultsBtn=$('.saveLaterResults');
 // Empty Local Storage Array of SavedResults
     var savedResultsArr=[]
 
@@ -60,7 +64,7 @@ getName();
 // A function that displays name from data onto card
 function displayName(food){
     // Display name of food on card
-    var nameOfFood=$('<h3>');
+    var nameOfFood=$('<h5>');
     titleOfFood.append(nameOfFood);
     nameOfFood.append(food);
 }
@@ -78,18 +82,47 @@ function displayDescription(descriptionOfFood){
 
 // A Function that displays img of food from data onto card
 function displayImg(foodImg){
-    console.log(foodImg);
     // Display food on card
+    console.log(foodImg);
     var img=$("<img>");
-    img.attr('src',foodImg)
-    resultsImg.append(img);
+    img.attr('class', 'imgResult');
+    img.attr('src', foodImg);
+    displayPic.append(img);
 }
 
-// Creating a see more Btn that assigns to index3.html
+// Creating a see more Btn that assigns to SeeMore.html
 seeMoreBtn.on('click',function(){
     // console.log('seemorebtn');
-    location.assign("./index3.html");
+    location.assign("./SeeMore.html");
 })
+
+// Creating a home page btn that assigns to index.html
+homeBtn.on('click', function(){
+    console.log('Home Button')
+    location.assign("../.././index.html");
+})
+
+// Creating an About Me btn that assigns to about.html
+aboutBtn.on('click', function(){
+    console.log('About Button')
+    location.assign("./about.html");
+})
+
+// Creating a Contact btn that assigns to contact.html
+contactBtn.on('click', function(){
+    console.log('Contact Button')
+    location.assign("./contact.html");
+})
+
+// Save for Later Results button that assigns to SaveForLater.html
+saveLaterResultsBtn.on('click', function(){
+    // console.log('results');
+    location.assign("./SaveForLater.html");
+    savedResultsArr=localStorage.getItem("SavedFood");
+    // Execute a function that displays saved results onto page
+    // function displaySavedResults(savedResultsArr)
+})
+
 
 // Save for later button should save data into local storage
 saveLaterBtn.on('click',function(){
@@ -106,14 +139,3 @@ saveLaterBtn.on('click',function(){
     savedArr=localStorage.setItem("SavedFood",JSON.stringify(foodInfo));
 })
 
-saveLaterResultsBtn.on('click', function(){
-    // console.log('results');
-    location.assign("../Additional HTML/help.html");
-    savedResultsArr=localStorage.getItem("SavedFood");
-    // Execute a function that displays saved results onto page
-    function displaySavedResults(savedResultsArr);
-})
-
-function displaySavedResults({
-    
-})
