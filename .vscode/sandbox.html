@@ -1,0 +1,940 @@
+<div id="animation-carousel" class="relative w-full" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-2.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item="active">
+            <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
+<!--we can use this when we are ready to add images to our list items-->
+<ul class="list-image-[url(checkmark.png)] ...">
+    <li>5 cups chopped Porcini mushrooms</li>
+  </ul>
+
+  
+<button id="dropdownUsersButton" data-dropdown-toggle="dropdownUsers" data-dropdown-placement="bottom" <a href="#"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a> type="button">Project users <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+<!-- Dropdown menu -->
+<div id="dropdownUsers" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+  <ul class="h-48 py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Jese image">
+        Jese Leos
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-2.jpg" alt="Jese image">
+        Robert Gough
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image">
+        Bonnie Green
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Jese image">
+        Leslie Livingston
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="Jese image">
+        Michael Gough
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-2.jpg" alt="Jese image">
+        Joseph Mcfall
+      </a>
+    </li>
+          <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image">
+        Roberta Casas
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <img class="w-6 h-6 mr-2 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Jese image">
+        Neil Sims
+      </a>
+    </li>
+  </ul>
+  <a href="#" class="flex items-center p-3 text-sm font-medium text-blue-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
+      <svg class="w-5 h-5 mr-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg>
+      Add new user
+  </a>
+</div>
+
+
+  <!--My lovely button you've come too far to just be thrown away. I'll keep you safe in here-->
+  <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="right-end"
+      class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+      type="button">
+      Getting Started
+      <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+      <div class="p-3">
+        <label for="input-group-search" class="sr-only">Search</label>
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="input-group-search"
+            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+            placeholder="Search Food Items" />
+        </div>
+      </div>
+      <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownSearchButton">
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input id="checkbox-item-11" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-11"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Protein</label>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input checked id="checkbox-item-12" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-12"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">CARBS</label>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input id="checkbox-item-13" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-13"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">DAIRY</label>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input id="checkbox-item-14" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-14"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">FRUIT</label>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input id="checkbox-item-15" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-15"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">VEGETABLES</label>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input id="checkbox-item-16" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-16"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">SEASONING</label>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <input id="checkbox-item-17" type="checkbox" value=""
+              class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+            <label for="checkbox-item-17"
+              class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">GLUTEN-FREE</label>
+          </div>
+        </li>
+      </ul>
+      <a href="#"
+        class="flex items-center p-3 text-sm font-medium text-red-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+        <svg class="w-5 h-5 mr-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 6a3 3 0 11-6 0 3 3 0 016 0zM14 17a6 6 0 00-12 0h12zM13 8a1 1 0 100 2h4a1 1 0 100-2h-4z"></path>
+        </svg>
+        Generate Your List!
+      </a>
+    </div>
+  </div>
+
+  <!-- edited getting started button -->
+  <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="right-end"
+  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+  type="button">
+  Getting Started
+  <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+  </svg>
+</button>
+
+<!-- Dropdown menu selections and styling for "Getting Started" -->
+<div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+  <div class="p-3">
+    <label for="input-group-search" class="sr-only">Search</label>
+    <div class="relative">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
+          viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <input type="text" id="input-group-search"
+        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+        placeholder="Search Food Items" />
+    </div>
+  </div>
+  <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
+    aria-labelledby="dropdownSearchButton">
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input id="checkbox-item-11" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-11"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Protein</label>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input checked id="checkbox-item-12" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-12"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">CARBS</label>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input id="checkbox-item-13" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-13"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">DAIRY</label>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input id="checkbox-item-14" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-14"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">FRUIT</label>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input id="checkbox-item-15" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-15"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">VEGETABLES</label>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input id="checkbox-item-16" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-16"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">SEASONING</label>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+        <input id="checkbox-item-17" type="checkbox" value=""
+          class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+        <label for="checkbox-item-17"
+          class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">GLUTEN-FREE</label>
+      </div>
+    </li>
+  </ul>
+  <a href="#"
+    class="flex items-center p-3 text-sm font-medium text-green-800 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+    <svg class="w-5 h-5 mr-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 6a3 3 0 11-6 0 3 3 0 016 0zM14 17a6 6 0 00-12 0h12zM13 8a1 1 0 100 2h4a1 1 0 100-2h-4z"></path>
+    </svg>
+    Click here to generate Your List!
+  </a>
+</div>
+</div>
+   </p>
+</div>
+
+   <!--Button for "Getting Started" with dropdown menu-->
+      <!-- <p class="rotate-180 h-20 w-100 text-top-left text-7xl font-san-serif font-bold font-style: italic"> -->
+       
+
+    
+
+  <!-- <button
+        id="goRecepieBtn"
+        type="button"
+        class="bg-black text-white py-3 px-5 rounded-lg m-3 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-green-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-yellow-600 dark:hover:bg-yellow-300 dark:focus:ring-yellow-800"
+      >
+        SUBMIT
+      </button> -->
+
+       <!-- <button
+        id="submitbtn"
+        type="button"
+        class="rotate-180 float-right mt-60 bg-black self-end text-white py-3 px-5 rounded-lg m-3 active:bg-yellow-500 active:text-black"
+      >
+        Submit
+      </button>
+    </div> -->
+
+  <!-- <div id="resultcontainer bg-amber-500 h-80 w-60 ml-60">
+      <p class="text-center font-bold"></p>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--Start new dropdown button here-->
+<button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown search <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+<!-- Dropdown menu -->
+<div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+    <div class="p-3">
+      <label for="input-group-search" class="sr-only">Search</label>
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+        </div>
+        <input type="text" id="input-group-search" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search user">
+      </div>
+    </div>
+    <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+          <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My downloads</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+    <a href="#" class="flex items-center p-3 text-sm font-medium text-green-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-green-500 hover:underline">
+      <svg class="w-5 h-5 mr-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 6a3 3 0 11-6 0 3 3 0 016 0zM14 17a6 6 0 00-12 0h12zM13 8a1 1 0 100 2h4a1 1 0 100-2h-4z"></path></svg>
+      Submit Food Items
+  </a>
+</div>
+
+ <!--This div contains the hero banner-->
+ <div class="relative">
+  <div class="h-80 w-100 bg-cover bg-center bg-no-repeat py-60 rotate-180"
+        style="background-image: url('./Assets/images/foodherob.jpg')">
+    </div>
+
+    <!--Drag and drop food items into your bucket-->
+<div class="flex items-center justify-center w-full">
+  <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+      <div class="flex flex-col items-center justify-center pt-5 pb-6">
+          <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+          <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+      </div>
+      <input id="dropzone-file" type="file" class="hidden" />
+  </label>
+</div> 
+
+
+<!--Mah button brings all the clicks to the yard-->
+      <!--Button with dropdown menu for categories of food items-->
+      <div class="">
+        <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom"
+        class="block text-gray-900 text-2xl rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+        type="button">
+        Select Your Ingrediants Here
+        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+        <div class="p-3">
+          <label for="input-group-search" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input type="text" id="input-group-search"
+              class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+              placeholder="Search Food Items" />
+          </div>
+        </div>
+        <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
+          aria-labelledby="dropdownSearchButton">
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-11" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-11"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Protein</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input checked id="checkbox-item-12" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-12"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">CARBS</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-13" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-13"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">DAIRY</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-14" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-14"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">FRUIT</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-15" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-15"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">VEGETABLES</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-16" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-16"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">SEASONING</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center pl-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-17" type="checkbox" value=""
+                class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+              <label for="checkbox-item-17"
+                class="w-full py-2 ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">GLUTEN-FREE</label>
+            </div>
+          </li>
+        </ul>
+        <a href="#"
+          class="flex items-center p-3 text-sm font-medium text-red-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+          <svg class="w-5 h-5 mr-1" aria-hidden="true" fill="bg-black" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6a3 3 0 11-6 0 3 3 0 016 0zM14 17a6 6 0 00-12 0h12zM13 8a1 1 0 100 2h4a1 1 0 100-2h-4z"></path>
+          </svg>
+          Generate Recipes!
+        </a>
+        </div>
+        </div>
+        </div>
+
+        <div role="status" class="max-w-sm animate-pulse">
+          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
+          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
+          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+
+        <!--bottom nav-->
+        <!--Bottom Nav bar-->
+  <div
+  class="fixed bottom-0 z-50 w-full h-16 -translate-x-1/2 bg-white border-t border-gray-200 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+  <div class="grid h-full max-w-lg grid-cols-6 mx-auto">
+ 
+    <button data-tooltip-target="tooltip-bookmark" type="button"
+      class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+      <svg
+        class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-yellow-600 dark:group-hover:text-yellow-500"
+        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+      </svg>
+      <span class="sr-only">Bookmark</span>
+    </button>
+    <div id="tooltip-bookmark" role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+      Bookmark
+      <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+    <div class="flex items-center justify-center col-span-2">
+      <div
+        class="flex items-center justify-between w-full text-gray-600 dark:text-gray-400 bg-gray-100 rounded-lg dark:bg-gray-600 max-w-[128px] mx-2">
+        <button type="button"
+          class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-l-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z">
+            </path>
+          </svg>
+          <span class="sr-only">Previous page</span>
+        </button>
+        <span class="flex-shrink-0 mx-1 text-sm font-medium">1 of 3</span>
+        <button type="button"
+          class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-r-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z">
+            </path>
+          </svg>
+          <span class="sr-only">Next page</span>
+        </button>
+      </div>
+    </div>
+    <button data-tooltip-target="tooltip-settings" type="button"
+      class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+      <svg
+        class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-yellow-600 dark:group-hover:text-yellow-500"
+        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path
+          d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z">
+        </path>
+      </svg>
+      <span class="sr-only">Settings</span>
+    </button>
+    <div id="tooltip-settings" role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+      Settings
+      <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+    <button data-tooltip-target="tooltip-profile" type="button"
+      class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+      <svg
+        class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-yellow-600 dark:group-hover:text-yellow-500"
+        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z">
+        </path>
+      </svg>
+      <span class="sr-only">Profile</span>
+    </button>
+    <div id="tooltip-profile" role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+      Profile
+      <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+
+
+
+
+            <!-- Nav bar links for the signin, get started, ect.. -->
+          <!-- drawer init and show -->
+          <li class="mr-52 py-2 text-xl">
+            <div class="text-bold">
+              <button
+                class="text-gray-900 hover:text-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-yellow-600 dark:hover:bg-yellow-700 focus:outline-none dark:focus:ring-yellow-800"
+                type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                Get Started
+              </button>
+            </div>
+
+            <!-- drawer component -->
+            <div id="drawer-navigation"
+              class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+              tabindex="-1" aria-labelledby="drawer-navigation-label">
+              <h5 id="drawer-navigation-label"
+                class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
+              <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close menu</span>
+              </button>
+              <div class="py-4 overflow-y-auto">
+                <ul class="space-y-2 font-medium">
+                  <li>
+                    <a href="#"
+                      class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <svg aria-hidden="true"
+                        class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                      </svg>
+                      <span class="ml-3">CATEGORIES</span>
+                    </a>
+                  </li>
+
+
+                  <li>
+                    <button type="button"
+                      class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="flex-1 ml-3 text-left whitespace-nowrap">Protein</span>
+
+
+
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                      <!-- <li>
+                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Chicken</a>
+                 </li>
+                 <li>
+                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Beef</a>
+                 </li>
+                 <li>
+                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Seafood</a>
+                 </li> -->
+
+
+                      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">100g/Day avg</h3>
+                      <ul
+                        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="vue-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="vue-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Chicken</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="react-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="react-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Beef</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="angular-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="angular-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seafood</label>
+                          </div>
+                        </li>
+                        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                            <input id="laravel-checkbox" type="checkbox" value=""
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="laravel-checkbox"
+                              class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laravel</label>
+                          </div>
+                        </li>
+                      </ul>
+
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                        </path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
+                      <span
+                        class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                        </path>
+                        <path
+                          d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                        </path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
+                      <span
+                        class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <svg aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                    </a>
+                  </li>
+                  <ul role="list" class="marker:text-sky-400 list-disc pl-5 space-y-3 text-slate-500">
+                    <li>5 cups chopped Porcini mushrooms</li>
+                    <li>1/2 cup of olive oil</li>
+                    <li>3lb of celery</li>
+                    <li>5 cups chopped Porcini mushrooms</li>
+                    <li>1/2 cup of olive oil</li>
+                    <li>3lb of celery</li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <div class="items-center mx-auto p-4">
+          <li>
+            <a href="./signin.html"
+              class="block mr-48 mt-3 py-3 pr-4 text-gray-900 rounded  hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:text-yellow-500"
+              aria-current="page">Sign In</a>
+          </li>
+          <li>
+            <a href="./contact.html"
+              class="block mr-32 mt-3 py-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact
+              Us</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              class="block mt-4 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          </li>
+          <li>
+            <a href="./help.html"
+              class="block py-2 mt-4 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Help</a>
+          </li>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -3,10 +3,10 @@
 Welcome to "What's "In Your Fridge!" A simple application that allows users to search for recipes based on the ingredients that are available to them.
 
 ## Project URL
-<>
+<https://github.com/RyanSKang/Whats-In-Your-Fridge>
 ## Deployment
 
-- []()
+- [https://ryanskang.github.io/Whats-In-Your-Fridge/](https://ryanskang.github.io/Whats-In-Your-Fridge/)
 
 ## Demo/Screenshot
 
