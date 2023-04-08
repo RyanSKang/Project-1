@@ -1,59 +1,77 @@
-// const $triggerE1: HTMLElement = document.getElementById('vue-checkbox-poultry');
-// const $targetE1: HTMLElement = document.querySelector('selected-ingredients1');
+let ingredients = document.getElementById("")
+
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+} else {
+  document.documentElement.classList.remove('dark')
+}
 
 
-
-// const Tooltip = new Tooltip(
-// $targetE1, $triggerE1, options
-// );
-
-// const options = {
-//     triggerType: 'click',
-//     onShow: () => {
-//         console.log('its working?');
-//     }
-// };
-
-// const tooltip: TooltipInterface = new Tooltip($targetEl, $triggerEl, options);
-// tooltip.show();
-
-
-
-// const carousel = new Carousel(items, options);
-
-// const catBtn = document.querySelector('.categorybtn');
-// const submitBtn = document.querySelector('.submitbtn');
-// const categoryResults = document.querySelector('.categoryContainer');
-
-// let categoryItems = [
-//     {seasoning: [Salt, AllSpice, Garlic],
-//     protein: [chicken, beef, pork],
-//     carbs: [bread, rice, beans],
-//     veggies: [carrots, onion, potato]}
-// ];
-
-// function displayCategories(categoryItems) {
-//     let itemList = document.getElementById('resultcontainer');
-
-//     itemList.textContent = categoryItems.seasoning[0];
+var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     
-// }
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden');
+    } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+    }
+    
+    var themeToggleBtn = document.getElementById('theme-toggle');
+    
+    themeToggleBtn.addEventListener('click', function() {
+    
+        // toggle icons inside button
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+    
+        // if set via local storage previously
+        if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            }
+    
+        // if NOT set via local storage previously
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+      });
 
 
-// function getRecipes() {
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             'X-RapidAPI-Key': '2cbea6cb03mshf171fe520b8f6d2p1beedfjsn067d28eee338',
-//             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-//         }
-//     };
 
-//     fetch('https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup', options)
-//         .then(response => response.json())
-//         .then(response => console.log(response))
-//         .catch(err => console.error(err));
-//     }
-// getRecipes();
+//ready function
 
-// catBtn.addEventListener('click', getRecipes);
+
+//checkbox for html
+{/* <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+<div class="flex items-center pl-3">
+  <input id="vue-checkbox-poultry" type="checkbox" value=""
+    class="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+  <label for="vue-checkbox"
+    class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Poultry</label>
+</div>
+</li> */}
+
+
+// List for HTML
+{/* <ul role="list" class="marker:text-yellow-400 list-disc pl-5 space-y-3 text-slate-500">
+<li class="selected-ingredients1"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+<li class="selected-ingredients"></li>
+</ul> */}
