@@ -1,5 +1,5 @@
 // Link tastyAPI to javascript
-var Key='ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9'
+var Key='3602e7d2c0msh7b77c709e71ee6fp121298jsnc07eb1430570'
 const options = {
 	method: 'GET',
 	headers: {'X-RapidAPI-Key':Key, 
@@ -17,8 +17,6 @@ var getRecipeListURL='https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&t
     var hero=$('.hero');
 // <a> tag holdimg image but outside of hero div
     var displayPic=$('.resultsImg');
-//  <img> tag within resultsImg a tag
-    var resultsImg=$('imgResult');
 // Div within layer holding food description
     var foodDescription=$('.foodDescription');
 // See More Button
@@ -85,7 +83,7 @@ function displayImg(foodImg){
     // Display food on card
     console.log(foodImg);
     var img=$("<img>");
-    img.attr('class', 'imgResult');
+    img.attr('class', 'object-cover h-96 w-full rounded-t-lg imgResult');
     img.attr('src', foodImg);
     displayPic.append(img);
 }
@@ -128,11 +126,11 @@ saveLaterResultsBtn.on('click', function(){
 saveLaterBtn.on('click',function(){
     // console.log('save later button');
     var savedArr=[];
-    console.log(titleOfFood[0].innerHTML);
+    console.log(titleOfFood[0].innerText);
     var foodInfo={
-        "name":titleOfFood[0].innerHTML,
-        "description": foodDescription[0].innerHTML,
-        "img": resultsImg[0].innerHTML,
+        "name":titleOfFood[0].innerText,
+        "description": foodDescription[0].innerText,
+        "img": displayPic[0].innerHTML,
     };
     console.log(foodInfo);
     savedResultsArr.push(foodInfo);
