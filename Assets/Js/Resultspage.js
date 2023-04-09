@@ -1,5 +1,5 @@
 // Link tastyAPI to javascript
-var Key='3602e7d2c0msh7b77c709e71ee6fp121298jsnc07eb1430570'
+var Key='a38198cdf8msh2c9c01e82804028p17fafejsnb3ea1a91c07b'
 const options = {
 	method: 'GET',
 	headers: {'X-RapidAPI-Key':Key, 
