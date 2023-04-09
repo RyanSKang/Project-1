@@ -1,5 +1,5 @@
 // Linking API
-var Key='3602e7d2c0msh7b77c709e71ee6fp121298jsnc07eb1430570'
+var Key='a38198cdf8msh2c9c01e82804028p17fafejsnb3ea1a91c07b'
 
 const options = {
 	method: 'GET',
@@ -156,11 +156,49 @@ function getAPI(){
 }
 getAPI();
 
+
 // Function to save checkbox values into local storage
-function savedIngredients(){
-  let ingredientsArr=[];
-  let checkboxes=$("input[type= 'checkbox']:checked");
-  for (var i=0; i<checkboxes.length;i++)
-  ingredientsArr.push(checkboxes[i].value);
+
+console.log(checkedBox)
+
+function saveIngredientsToLocalStorage(ingredients){
+  var savedIngredients=JSON.parse(localStorage.getItem('Ingredients')) || [];
+  savedIngredients.push(ingredients);
+  localStorage.setItem('Ingredients', JSON.stringify(savedIngredients));
 }
-savedIngredients();
+
+var checkedBoxValue=checkedBox[0].checked;
+console.log(typeof checkedBoxValue)
+
+var savedIngredientsArr=[];
+
+checkedBox.on('click', function(){
+for(var i=0; checkedBox.length;i++)
+var ingredientsArr=[]
+var ingredientsCheckList={
+  "name": checkedBox[i].defaultValue,
+}
+ingredientsArr.push(ingredientsCheckList);
+savedIngredientsArr=localStorage.setItem("Ingredients", JSON.stringify(ingredientsCheckList));
+
+
+
+
+
+
+  // var checkedBoxValue=checkedBox[0].checked;
+  // var checkedBoxIngredients=checkedBox[0].defaultValue;
+  
+  // if(checkedBoxValue === true){
+  //     for(var i=0; i<checkedBox.length;i++){
+  //     // console.log("true")
+  //     var newcheckedBoxValue=checkedBox[i].checked
+  //     saveIngredientsToLocalStorage(newcheckedBoxValue);
+  //     localStorage.removeItem(false)
+  //   }}
+  // if (newcheckedBoxValue !== true){
+  //     // console.log('broken');
+  //     localStorage.removeItem(false);
+  //    }  
+  // }    
+  });
