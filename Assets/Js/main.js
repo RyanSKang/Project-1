@@ -1,7 +1,25 @@
+// Linking API
+var Key='3602e7d2c0msh7b77c709e71ee6fp121298jsnc07eb1430570'
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': Key,
+		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+	}
+};
+
+var ListRecipeURL= "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes"
+
+
+
+// Defining Variables
 let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
 let displayIngredientsLi = document.querySelectorAll("selected-ingredients");
-let generateListBtn = document.getElementById("generateBtn")
+let generateBtn = document.getElementById("generateBtn")
+var checkedBox= $('.checkedBox')
 
+// Toggle light or dark mode
 if (
   localStorage.getItem("color-theme") === "dark" ||
   (!("color-theme" in localStorage) &&
@@ -123,3 +141,26 @@ themeToggleBtn.addEventListener("click", function () {
 <li class="selected-ingredients"></li>
 </ul> */
 }
+
+// Fetching API 
+function getAPI(){
+
+  fetch(ListRecipeURL,options)
+  .then(function(response){
+    console.log(response);
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data);
+  })
+}
+getAPI();
+
+// Function to save checkbox values into local storage
+function savedIngredients(){
+  let ingredientsArr=[];
+  let checkboxes=$("input[type= 'checkbox']:checked");
+  for (var i=0; i<checkboxes.length;i++)
+  ingredientsArr.push(checkboxes[i].value);
+}
+savedIngredients();
