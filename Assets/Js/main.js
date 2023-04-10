@@ -86,28 +86,27 @@ function getAPI(){
 getAPI();
 
 // Function to save checkbox values into local storage
-console.log(checkedBox)
+
+var checkBoxValue=$('input[type="checkbox"]:checked').val();
+console.log(checkBoxValue)
+
 function saveIngredientsToLocalStorage(){
-  for(var i=0; i<checkedBox.length;i++)
   var ingredientsArr=[];
-  var ingredientsCheckList={
-      "name": checkedBox[0].defaultValue,
-    }
+  var ingredientsCheckList=[
+      $(this).val(),
+  ]
     ingredientsArr.push(ingredientsCheckList);
     savedIngredientsArr=localStorage.setItem("Ingredients", JSON.stringify(ingredientsCheckList));
     displayIngredientsLi();
   }
 
 function displayIngredientsLi(){
-ingredientsList.empty();
 var savedIngredientsArr=localStorage.getItem("Ingredients");
-ingredientsHist=JSON.parse(savedIngredientsArr)
+var ingredientsHist=JSON.parse(savedIngredientsArr)
 console.log(ingredientsHist)
 
-ingredientsList.append('<li>' + ingredientsHist.name + "</li>");
+ingredientsList.append('<li>' + ingredientsHist[0] + "</li>");
 }
-
-var savedIngredientsArr=[];
 
 checkedBox.on('click', saveIngredientsToLocalStorage);
   
