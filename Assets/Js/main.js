@@ -1,5 +1,5 @@
 // Linking API
-var Key='a38198cdf8msh2c9c01e82804028p17fafejsnb3ea1a91c07b'
+var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
 
 const options = {
 	method: 'GET',
@@ -9,12 +9,13 @@ const options = {
 	}
 };
 
-var ListRecipeURL= "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken"
-var baseURL="https://tasty.p.rapidapi.com/recipes/list?"
+var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
+
 // Defining Variables
 let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
 let ingredientsList = $('.selectedIngredients');
-let generateBtn = document.getElementById("generateBtn");
+let generateBtn = $("#generateBtn");
+
 
 // Toggle light or dark mode
 if (
@@ -70,19 +71,6 @@ if (
       }
     });
     
-    // Fetching API 
-    function getAPI(){
-      
-      fetch(ListRecipeURL,options)
-      .then(function(response){
-        console.log(response);
-        return response.json();
-      })
-      .then(function(data){
-        console.log(data);
-      })
-    }
-    getAPI();
     
     
     // Check boxes defined
@@ -103,19 +91,50 @@ if (
       
       const veggiesCheckBox=$('.veggiesCheck:checked').map(function() { return { 'name': $(this).val()} }).get();
       localStorage.setItem("Vegetables", JSON.stringify(veggiesCheckBox));
-
+      
       const fruitCheckBox=$('.fruitCheck:checked').map(function() { return { 'name': $(this).val()} }).get();
       localStorage.setItem("Fruit", JSON.stringify(fruitCheckBox));
-
+      
       const spicesCheckBox=$('.spicesCheck:checked').map(function() { return { 'name': $(this).val()} }).get();
       localStorage.setItem("Spices", JSON.stringify(spicesCheckBox));
-  
-  }
-
-// Event Listener
-checkBoxProtein.on('click', saveIngredientsToLocalStorage);
-checkBoxDairy.on('click', saveIngredientsToLocalStorage);
-checkBoxVeggies.on('click', saveIngredientsToLocalStorage);
-checkBoxFruit.on('click', saveIngredientsToLocalStorage);
-checkBoxSpices.on('click', saveIngredientsToLocalStorage);
-  
+      
+    }
+    
+    // Event Listener
+    checkBoxProtein.on('click', saveIngredientsToLocalStorage);
+    checkBoxDairy.on('click', saveIngredientsToLocalStorage);
+    checkBoxVeggies.on('click', saveIngredientsToLocalStorage);
+    checkBoxFruit.on('click', saveIngredientsToLocalStorage);
+    checkBoxSpices.on('click', saveIngredientsToLocalStorage);
+    
+    
+    // Getting Base URL for API with
+    function getStarterURL(filteredIngredients){
+      var newURL= baseURL
+      newURL += filteredIngredients;
+      return newURL
+      console.log(newURL);
+    }
+    
+    // Adding Ingredients parameter to Base URL for API Fetch
+    function ingredientStringParam(newProtein){
+      var newURL=getStarterURL(newProtein);
+      return newURL;
+    }
+    
+    // Generate a result list data for Results Page
+    generateBtn.on('click', function(){
+      const newProtein= JSON.parse(localStorage.getItem("Protein"))
+      console.log(newProtein[0].name);
+      const searchURL=ingredientStringParam(newProtein[0].name)
+      
+      // Fetching API 
+         fetch(searchURL,options)
+        .then(function(response){
+          console.log(response);
+          return response.json();
+        })
+        .then(function(data){
+          console.log(data);
+        })
+      });
