@@ -110,7 +110,6 @@ if (
       const spicesCheckBox=$('.spicesCheck:checked').map(function() { return { 'name': $(this).val()} }).get();
       localStorage.setItem("Spices", JSON.stringify(spicesCheckBox));
   
-    // displayIngredientsLi();
   }
 
 // Event Listener
