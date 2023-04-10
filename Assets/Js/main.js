@@ -1,13 +1,13 @@
-// Linking API
-var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
+// // Linking API
+// var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': Key,
-		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
-	}
-};
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': Key,
+// 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+// 	}
+// };
 
 var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
 
@@ -71,8 +71,6 @@ if (
       }
     });
     
-    
-    
     // Check boxes defined
     let checkBoxProtein=$('.proteinCheck');
     let checkBoxDairy=$('.dairyCheck');
@@ -124,17 +122,30 @@ if (
     
     // Generate a result list data for Results Page
     generateBtn.on('click', function(){
-      const newProtein= JSON.parse(localStorage.getItem("Protein"))
-      console.log(newProtein[0].name);
-      const searchURL=ingredientStringParam(newProtein[0].name)
+      // const newProtein= JSON.parse(localStorage.getItem("Protein"))
+      // console.log(newProtein[0].name);
+      // const searchURL=ingredientStringParam(newProtein[0].name)
       
-      // Fetching API 
-         fetch(searchURL,options)
-        .then(function(response){
-          console.log(response);
-          return response.json();
-        })
-        .then(function(data){
-          console.log(data);
-        })
+      // // Fetching API 
+      //    fetch(searchURL,options)
+      //   .then(function(response){
+      //     console.log(response);
+      //     return response.json();
+      //   })
+      //   .then(function(data){
+      //     console.log(data);
+      //     return data;
+      //   })
+        const proteinLocalStorage=JSON.parse(localStorage.getItem("Protein"))
+        const dairyLocalStorage= JSON.parse(localStorage.getItem("Dairy"))
+        const vegetablesLocalStorage=JSON.parse(localStorage.getItem("Vegetables"))
+        const fruitLocalStorage= JSON.parse(localStorage.getItem("Fruit"))
+        const spicesLocalStorage=JSON.parse(localStorage.getItem("Spices"))
+
+        const concatValue=proteinLocalStorage.concat(dairyLocalStorage).concat(vegetablesLocalStorage).concat(vegetablesLocalStorage).concat(fruitLocalStorage).concat(spicesLocalStorage).map(m=>m.name).join(' ');
+        const filteredArr=localStorage.setItem("Filtered Ingredients", JSON.stringify(concatValue));
+        // console.log(concatValue)        
+        location.assign("./Assets/Additional HTML/ResultsPage.html");
+        getResultsList();
       });
+      // concat map join

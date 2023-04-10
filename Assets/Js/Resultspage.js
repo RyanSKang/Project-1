@@ -1,13 +1,15 @@
-// Link tastyAPI to javascript
-var Key = 'a38198cdf8msh2c9c01e82804028p17fafejsnb3ea1a91c07b'
+// Linking API
+var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
+
 const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': Key,
-        'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-    }
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': Key,
+		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+	}
 };
-var getRecipeListURL = 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes';
+
+var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
 
 // Toggle light or dark mode
 if (
@@ -87,41 +89,44 @@ var aboutBtn = $('.aboutBtn');
 var contactBtn = $('.contactBtn');
 // Save for later Results Button
 var saveLaterResultsBtn = $('.saveLaterResults');
-// Empty Local Storage Array of SavedResults
-var savedResultsArr = []
-
-var Recipe = null
 
 // A function that retrieves data from API
-function getName() {
-
-    // fetch API
-    fetch(getRecipeListURL, options)
-        .then(function (response) {
-            console.log(response);
-            return response.json();
-        })
-
-        .then(function (data) {
-            console.log(data);
-
-            Recipe = data.results[0]
-
-            var food = data.results[0].name;
-            displayName(food);
-
-            var descriptionOfFood = data.results[0].description;
-            displayDescription(descriptionOfFood);
-
-            var foodImg = data.results[0].thumbnail_url
-            displayImg(foodImg);
-
-        })
+function getResultsList() {
+  const newSearch= JSON.parse(localStorage.getItem("Filtered Ingredients"))
+  const searchURL=ingredientStringParam(newSearch)
+  
+  // Fetching API 
+     fetch(searchURL,options)
+    .then(function(response){
+      console.log(response);
+      return response.json();
+    })
+    .then(function(data){
+      console.log(data);
+      
+      for(let i=0; i<data.results.length;i++){
+      const food = data.results[i].name;
+      console.log(food)
+      displayName(food);
+      
+      const descriptionOfFood = data.results[i].description;
+      console.log(descriptionOfFood)
+      displayDescription(descriptionOfFood);
+      
+      const foodImg = data.results[i].thumbnail_url
+      console.log(foodImg)
+      displayImg(foodImg);
+    }})
 }
-getName();
+getResultsList();
 
+// Saving results into local storage for saved results
+function saveResultsArr(){
+  const saveResultsArr=localStorage.setItem("SavedFood",JSON.stringify([]));
+}
 // A function that displays name from data onto card
 function displayName(food) {
+
     // Display name of food on card
     var nameOfFood = $('<h5>');
     titleOfFood.append(nameOfFood);
@@ -131,7 +136,7 @@ function displayName(food) {
 // A function that displays description from data onto card
 function displayDescription(descriptionOfFood) {
     // Truncating long strips of description to the first sentence
-    const stringArr = descriptionOfFood.split('!');
+    const stringArr = descriptionOfFood.split('.');
 
     // Display description of food on card
     var description = $('<p>');
@@ -151,7 +156,10 @@ function displayImg(foodImg) {
 
 // Creating a see more Btn that assigns to SeeMore.html
 seeMoreBtn.on('click', function () {
-    localStorage.setItem("SeeMore", JSON.stringify(Recipe));
+  // Empty Local Storage Array for SeeMore
+    var recipeArr = []
+
+    localStorage.setItem("SeeMore", JSON.stringify(recipeArr));
     // console.log('seemorebtn');
     location.assign("./SeeMore.html");
 })
@@ -176,6 +184,8 @@ contactBtn.on('click', function () {
 
 // Save for Later Results button that assigns to SaveForLater.html
 saveLaterResultsBtn.on('click', function () {
+  // Empty Local Storage Array of SavedResults
+    var savedResultsArr = []
     // console.log('results');
     location.assign("./SaveForLater.html");
     savedResultsArr = localStorage.getItem("SavedFood");
@@ -186,18 +196,16 @@ saveLaterResultsBtn.on('click', function () {
 
 // Save for later button should save data into local storage
 saveLaterBtn.on('click', function () {
-    // console.log('save later button');
-    var savedArr = [];
+
+    saveResultsArr();
     console.log(titleOfFood[0].innerText);
+    saveLaterArr=JSON.parse(localStorage.getItem("SavedFood"));
     var foodInfo = {
         "name": titleOfFood[0].innerText,
         "description": foodDescription[0].innerText,
         "img": displayPic[0].innerHTML,
-        // "ingredient":
-        // "instructions":
     };
-    console.log(foodInfo);
-    savedResultsArr.push(foodInfo);
-    savedArr = localStorage.setItem("SavedFood", JSON.stringify(foodInfo));
+    saveLaterArr.push(foodInfo);
+    savedArr = localStorage.setItem("SavedFood", JSON.stringify(saveLaterArr));
 })
 
