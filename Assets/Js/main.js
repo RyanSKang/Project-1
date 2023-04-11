@@ -1,63 +1,13 @@
-//Language API
-let langUrl = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
+// // Linking API
+ var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
 
-const encodedParams = new URLSearchParams();
-encodedParams.append("q", "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful1");
-encodedParams.append("target", "es");
-encodedParams.append("source", "en");
-
-let settings = {
-  async: true,
-  crossDomain: true,
-  url: "https://google-translate1.p.rapidapi.com/language/translate/v2",
-  method: "POST",
-  headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'Accept-Encoding': 'application/gzip',
-        'Language-Api-Key': 'ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9',
-        'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-    },
-  data: {
-    source: "en",
-    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
-    target: ""
-  },
-  data: {
-    source: "de",
-    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
-    target: "",
-  },
-  data: {
-    source: "it",
-    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
-    target: "",
-  },
-  data: {
-    source: "zh",
-    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
-    target: ""
-  },
-  body: encodedParams
-}
-
-$(document).ready(function(){
-  $(".dropdown_class").click(function(e){
-  });
-  });
-
-// const serverLanguage = "en";
-// let defaultLang= serverLanguage;
-
-const options = {
-	method: 'POST',
+ const options = {
+	method: 'GET',
 	headers: {
-		'content-type': 'application/x-www-form-urlencoded',
-		'Accept-Encoding': 'application/gzip',
-		'Language-Api-Key': 'ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9',
-		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-	},
-	body: encodedParams
-};
+		'X-RapidAPI-Key': Key,
+ 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+ 	}
+ };
 
 function fetchLanguageTranslation(){
   $.ajax(options).done(function (response) {
@@ -222,17 +172,30 @@ if (
     
     // Generate a result list data for Results Page
     generateBtn.on('click', function(){
-      const newProtein= JSON.parse(localStorage.getItem("Protein"))
-      console.log(newProtein[0].name);
-      const searchURL=ingredientStringParam(newProtein[0].name)
+      // const newProtein= JSON.parse(localStorage.getItem("Protein"))
+      // console.log(newProtein[0].name);
+      // const searchURL=ingredientStringParam(newProtein[0].name)
       
-      // Fetching API 
-         fetch(searchURL,options)
-        .then(function(response){
-          console.log(response);
-          return response.json();
-        })
-        .then(function(data){
-          console.log(data);
-        })
+      // // Fetching API 
+      //    fetch(searchURL,options)
+      //   .then(function(response){
+      //     console.log(response);
+      //     return response.json();
+      //   })
+      //   .then(function(data){
+      //     console.log(data);
+      //     return data;
+      //   })
+        const proteinLocalStorage=JSON.parse(localStorage.getItem("Protein"))
+        const dairyLocalStorage= JSON.parse(localStorage.getItem("Dairy"))
+        const vegetablesLocalStorage=JSON.parse(localStorage.getItem("Vegetables"))
+        const fruitLocalStorage= JSON.parse(localStorage.getItem("Fruit"))
+        const spicesLocalStorage=JSON.parse(localStorage.getItem("Spices"))
+
+        const concatValue=proteinLocalStorage.concat(dairyLocalStorage).concat(vegetablesLocalStorage).concat(vegetablesLocalStorage).concat(fruitLocalStorage).concat(spicesLocalStorage).map(m=>m.name).join(' ');
+        const filteredArr=localStorage.setItem("Filtered Ingredients", JSON.stringify(concatValue));
+        // console.log(concatValue)        
+        location.assign("./Assets/Additional HTML/ResultsPage.html");
+        getResultsList();
       });
+      // concat map join
