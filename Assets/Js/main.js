@@ -1,23 +1,123 @@
-// Linking API
-var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
+//Language API
+let langUrl = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
+
+const encodedParams = new URLSearchParams();
+encodedParams.append("q", "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful1");
+encodedParams.append("target", "es");
+encodedParams.append("source", "en");
+
+let settings = {
+  async: true,
+  crossDomain: true,
+  url: "https://google-translate1.p.rapidapi.com/language/translate/v2",
+  method: "POST",
+  headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept-Encoding': 'application/gzip',
+        'Language-Api-Key': 'ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9',
+        'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+    },
+  data: {
+    source: "en",
+    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
+    target: ""
+  },
+  data: {
+    source: "de",
+    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
+    target: "",
+  },
+  data: {
+    source: "it",
+    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
+    target: "",
+  },
+  data: {
+    source: "zh",
+    q: "Get Started | >CATEGORIES | Protein | Day | Chicken | Beef | Seafood | Pork | servings | Dairy | Milk | Cheese | Yogurt | Butter | Vegetables | cups | Leafy Greens | Broccoli | Potato | Zucchini | Carrots | Onions | Peppers | Fruit | Oranges | Bananas | Strawberries | Lemons | Spices | Salt | Pepper | Garlic | Oregano | Generate | Recipe | Sign In | Contact Us | About | Help | Previous | Next | All | Share Your Recipe | Click | to | upload | or drag and drop | Dish Of The Week | Please be respectful when leaving a review | The | Ingrediant List : Bacon, bacon, bacon, bacon, and a side of bacon | Reviewed | Absolutely loved this recipe! | The bacon was perfect | Crispy but not too crispy soft | but not too soft | well, it was | actually a bit too salty so thats why I am giving this recipe | out of | I deviated from the recipe a little and I added extra salt. | Helpful | Not helpful",
+    target: ""
+  },
+  body: encodedParams
+}
+
+$(document).ready(function(){
+  $(".dropdown_class").click(function(e){
+  });
+  });
+
+// const serverLanguage = "en";
+// let defaultLang= serverLanguage;
 
 const options = {
-	method: 'GET',
+	method: 'POST',
 	headers: {
-		'X-RapidAPI-Key': Key,
-		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
-	}
+		'content-type': 'application/x-www-form-urlencoded',
+		'Accept-Encoding': 'application/gzip',
+		'Language-Api-Key': 'ad5821323emsh1310a3d7262579fp1527fejsn27b1dfa1e2b9',
+		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+	},
+	body: encodedParams
 };
 
-var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
+function fetchLanguageTranslation(){
+  $.ajax(options).done(function (response) {
+    console.log(response);
 
-// Defining Variables
-let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
-let ingredientsList = $('.selectedIngredients');
-let generateBtn = $("#generateBtn");
+    let translatedLanguage = response.data.translations[0].translatedLanguage;
+    updatePlaceholders(translatedLanguages);
+
+  });
+}
+//is form something I should create if this is not in a form tag?
+function updatePlaceholders(updateString){
+  let stringUpdate = updateString.split('|')
+  $('form > input').each(function(idx){
+  $(this).prop("placeholder", comp[idx+1].trim());
+
+  });
+
+  $("body").html(comp[0]);
+}
+
+$(".dropdown_class").click(function(e) 
+  if($(this).attr("tolang")) != 'en') {
+   settings.data.target = $(this).attr("tolang");
+   fetchLanguageTranslation();
+   $('button').html($(this).html());
+  } else {
+    //how to write a function that says it will translate to button that is clicked
+    updatePlaceholders(settings.data.q);
+    $('btnid').html("zh");
+  }
 
 
-// Toggle light or dark mode
+fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', settings)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
+// Tasty API
+
+
+// var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': Key,
+// 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+// 	}
+// };
+
+// var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
+
+// // Defining Variables
+// let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
+// let ingredientsList = $('.selectedIngredients');
+// let generateBtn = $("#generateBtn");
+
+
+// Toggle switch light or dark mode
 if (
   localStorage.getItem("color-theme") === "dark" ||
   (!("color-theme" in localStorage) &&
@@ -70,8 +170,6 @@ if (
         }
       }
     });
-    
-    
     
     // Check boxes defined
     let checkBoxProtein=$('.proteinCheck');
