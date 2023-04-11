@@ -1,4 +1,54 @@
 // // Linking API
+ var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
+
+ const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': Key,
+ 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+ 	}
+ };
+
+function fetchLanguageTranslation(){
+  $.ajax(options).done(function (response) {
+    console.log(response);
+
+    let translatedLanguage = response.data.translations[0].translatedLanguage;
+    updatePlaceholders(translatedLanguages);
+
+  });
+}
+//is form something I should create if this is not in a form tag?
+function updatePlaceholders(updateString){
+  let stringUpdate = updateString.split('|')
+  $('form > input').each(function(idx){
+  $(this).prop("placeholder", comp[idx+1].trim());
+
+  });
+
+  $("body").html(comp[0]);
+}
+
+$(".dropdown_class").click(function(e) 
+  if($(this).attr("tolang")) != 'en') {
+   settings.data.target = $(this).attr("tolang");
+   fetchLanguageTranslation();
+   $('button').html($(this).html());
+  } else {
+    //how to write a function that says it will translate to button that is clicked
+    updatePlaceholders(settings.data.q);
+    $('btnid').html("zh");
+  }
+
+
+fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', settings)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
+// Tasty API
+
+
 // var Key='5c5121022cmsh6b74a533d86f689p10c9aejsnf1bd89d05ce6'
 
 // const options = {
@@ -9,15 +59,15 @@
 // 	}
 // };
 
-var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
+// var baseURL="https://tasty.p.rapidapi.com/recipes/list?from=0&size=15&q=";
 
-// Defining Variables
-let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
-let ingredientsList = $('.selectedIngredients');
-let generateBtn = $("#generateBtn");
+// // Defining Variables
+// let ingredientCheckbox = document.querySelectorAll("input_checkbox_class");
+// let ingredientsList = $('.selectedIngredients');
+// let generateBtn = $("#generateBtn");
 
 
-// Toggle light or dark mode
+// Toggle switch light or dark mode
 if (
   localStorage.getItem("color-theme") === "dark" ||
   (!("color-theme" in localStorage) &&
