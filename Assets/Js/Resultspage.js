@@ -105,62 +105,98 @@ function getResultsList() {
       console.log(data);
       
       for(let i=0; i<data.results.length;i++){
-      const food = data.results[i].name;
-      console.log(food)
-      displayName(food);
-      
-      const descriptionOfFood = data.results[i].description;
-      console.log(descriptionOfFood)
-      displayDescription(descriptionOfFood);
-      
-      const foodImg = data.results[i].thumbnail_url
-      console.log(foodImg)
-      displayImg(foodImg);
+
+        // Creating cards for results
+        
+        const foodImg = data.results[i].thumbnail_url
+        const descriptionOfFood = data.results[i].description;
+        const food = data.results[i].name;
+        
+          const cloned=$('#cardTemplate[index="99"]').clone();
+          cloned.removeAttr("style");
+          cloned.attr("index",i);
+          cloned.attr("class","grid grid-cols-2 md:grid-cols-3 gap-4");
+          var img = $("<img>");
+          img.attr('class', 'object-cover h-96 w-full rounded-t-lg imgResult');
+          img.attr('src', foodImg);
+
+          var nameOfFood = $('<h5>');
+          titleOfFood.append(nameOfFood);
+          nameOfFood.append(food);
+          
+          var description = $('<p>');
+          foodDescription.append(description);
+          const stringArr = descriptionOfFood.split('.');
+          description.append(stringArr[0] + "...");
+
+          cloned.find('.resultsImg').prepend(img);
+          cloned.find('.foodDescription').prepend(description);
+          cloned.find('.resultsTitle').prepend(nameOfFood);
+
+          $('.mainBody').append(cloned);
+        // Executing function to append actual values into specific elements
+        // displayName(food);
+        
+        // displayDescription(descriptionOfFood);
+        
+        // displayImg(foodImg);
     }})
-}
+  };
+
 getResultsList();
 
 // Saving results into local storage for saved results
 function saveResultsArr(){
   const saveResultsArr=localStorage.setItem("SavedFood",JSON.stringify([]));
 }
-// A function that displays name from data onto card
-function displayName(food) {
 
-    // Display name of food on card
-    var nameOfFood = $('<h5>');
-    titleOfFood.append(nameOfFood);
-    nameOfFood.append(food);
+// Saving reults into local storage for see more page
+function seeMoreArr(){
+  const seeMoreArr=localStorage.setItem("SeeMore",JSON.stringify([]));
 }
+
+// A function that displays name from data onto card
+
+// function displayName(food) {
+//     // Display name of food on card
+//     var nameOfFood = $('<h5>');
+//     titleOfFood.append(nameOfFood);
+//     nameOfFood.append(food);
+// }
 
 // A function that displays description from data onto card
-function displayDescription(descriptionOfFood) {
+// function displayDescription(descriptionOfFood) {
     // Truncating long strips of description to the first sentence
-    const stringArr = descriptionOfFood.split('.');
+//     const stringArr = descriptionOfFood.split('.');
 
-    // Display description of food on card
-    var description = $('<p>');
-    foodDescription.append(description);
-    description.append(stringArr[0] + "...");
-}
+//     // Display description of food on card
+//     var description = $('<p>');
+//     foodDescription.append(description);
+//     description.append(stringArr[0] + "...");
+// }
 
 // A Function that displays img of food from data onto card
-function displayImg(foodImg) {
-    // Display food on card
-    console.log(foodImg);
-    var img = $("<img>");
-    img.attr('class', 'object-cover h-96 w-full rounded-t-lg imgResult');
-    img.attr('src', foodImg);
-    displayPic.append(img);
-}
+// function displayImg(foodImg) {
+
+//     // Display food on card
+//     var img = $("<img>");
+//     img.attr('class', 'object-cover h-96 w-full rounded-t-lg imgResult');
+//     img.attr('src', foodImg);
+//     displayPic.append(img);
+// }
 
 // Creating a see more Btn that assigns to SeeMore.html
 seeMoreBtn.on('click', function () {
-  // Empty Local Storage Array for SeeMore
-    var recipeArr = []
-
-    localStorage.setItem("SeeMore", JSON.stringify(recipeArr));
-    // console.log('seemorebtn');
+  seeMoreArr();
+  seeMoreInfo=JSON.parse(localStorage.getItem("SeeMore"))
+  console.log(seeMoreInfo);
+  seeMoreData={
+        "name": titleOfFood[i].innerText,
+        "description": foodDescription[i].innerText,
+        "img": displayPic[i].innerHTML
+      }
+    // localStorage.setItem("SeeMore", JSON.stringify(recipeArr));
+    // // console.log('seemorebtn');
     location.assign("./SeeMore.html");
 })
 
@@ -207,5 +243,4 @@ saveLaterBtn.on('click', function () {
     };
     saveLaterArr.push(foodInfo);
     savedArr = localStorage.setItem("SavedFood", JSON.stringify(saveLaterArr));
-})
-
+});
